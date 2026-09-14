@@ -2,7 +2,7 @@ package com.example.smartpack.quarter2;
 
 import org.junit.Test;
 
-public class Roldan_MiniPeta1 {
+public class Roldan_MiniPeta2 {
     @Test
     public void printMyProfile()  {
         String myName = "Lore";
@@ -13,6 +13,6 @@ public class Roldan_MiniPeta1 {
         System.out.println("<My DIGITAL Profile>");
         System.out.println("Big greetings! You may call me " + myName + " and currently, I am " + myAge + " years old.");
         System.out.println("I have a pet named " + petName + ".");
-        System.out.println("My comfort meal I eat often is " + favFood + ".");
+        System.out.println("My comfort meal I eat often is " + favFood + ". ");
     }
 }
