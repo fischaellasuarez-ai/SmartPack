@@ -2,7 +2,7 @@ package com.example.smartpack.quarter2;
 
 import org.junit.Test;
 
-public class Suarez_MiniPeta1{
+public class Suarez_MiniPeta2{
     @Test
     public void printMyProfile()  {
         String myName = "Suarez";
