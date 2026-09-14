@@ -17,7 +17,7 @@ public class Suarez_MiniPeta1{
         System.out.println("Good day, My name is " + myName + " where my age is " + myAge + " years old.");
         System.out.println("I have a 2 cute pet named " + pet1Name + " and "+ petName + ".");
         System.out.println("My favorite food if your gonna ask me, its " + favFood + " which I could eat all day!");
-        System.out.println("Lastly, my habits are " + myHabit + " and also " + my1Habit + ".");
+        System.out.println("Lastly, my habits are " + myHabit + " and also " + my1Habit + ". ");
 
     }
 }
