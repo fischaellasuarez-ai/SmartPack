@@ -1,5 +1,5 @@
 
-package quarter2_MiniPeta3;
+package com.example.smartpack.quarter2_MiniPeta3;
 
 public class Suarez_MiniPeta3 {
     public static void main(String[] args) {
