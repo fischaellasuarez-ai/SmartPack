@@ -27,7 +27,7 @@ public class Pecore_MiniPeta3
             System.out.println("Requirement Uploaded Successfully");
             System.out.println("------------------------------");
             System.out.println("Subject: " + subject);
-            System.out.println("Requirement: " + requirement);
+            System.out.println("Requirement:  " + requirement);
         }
     }
 }
