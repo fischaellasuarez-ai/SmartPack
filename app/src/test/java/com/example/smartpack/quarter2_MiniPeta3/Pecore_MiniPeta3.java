@@ -19,8 +19,8 @@ public class Pecore_MiniPeta3
 
         if(subject.isEmpty() || requirement.isEmpty())
         {
-            System.out.println("Upload Failed!");
-            System.out.println("Subject and Requirement must not be empty.");
+            System.out.println("Upload Failed");
+            System.out.println("Subject or Requirement is empty.");
         }
         else
         {
