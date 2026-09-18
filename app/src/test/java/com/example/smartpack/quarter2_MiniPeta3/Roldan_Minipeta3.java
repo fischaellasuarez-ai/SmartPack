@@ -44,7 +44,7 @@ import java.util.Scanner;
 
         // Display information
         System.out.println("\n--- Requirement Information ---");
-        System.out.println("Upload Date: " + day + "/" + month + "/ " + year);
+        System.out.println("Upload Date: " + day + "/" + month + "/" + year);
         System.out.println("Teacher Name: " + teacherName);
         System.out.println("Target Grade: " + targetGrade);
         System.out.println("Target Section: " + targetSection);
