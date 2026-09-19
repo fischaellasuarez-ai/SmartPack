@@ -48,7 +48,7 @@ class Deliverrequirment {
         System.out.println("Teacher Name: " + teacherName);
         System.out.println("Target Grade: " + targetGrade);
         System.out.println("Target Section: " + targetSection);
-        System.out.println("Notification Sent: " + notificationSent);
+        System.out.println("Notification  Sent: " + notificationSent);
 
         input.close();
     }
