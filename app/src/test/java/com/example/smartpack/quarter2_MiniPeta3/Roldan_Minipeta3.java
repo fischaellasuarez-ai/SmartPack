@@ -2,7 +2,7 @@ package com.example.smartpack.quarter2_MiniPeta3;
 
 import java.util.Scanner;
 
-public class Roldan_Minipeta3 {
+class Deliverrequirment {
 
     // The delivering of requirements
     public static void main(String[] args) {
@@ -51,6 +51,9 @@ public class Roldan_Minipeta3 {
         System.out.println("Notification Sent: " + notificationSent);
 
         input.close();
+    }
+
+    public static class DeliverRequirment {
     }
 }
 
