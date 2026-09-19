@@ -2,7 +2,7 @@ package com.example.smartpack.quarter2_MiniPeta3;
 
 import java.util.Scanner;
 
-public class Pecore_MiniPeta3
+ class NotificationUpload
 {
     public static void main(String[] args)
     {
@@ -29,5 +29,8 @@ public class Pecore_MiniPeta3
             System.out.println("Subject: " + subject);
             System.out.println("Requirement:  " + requirement);
         }
+    }
+
+    public static class Notification_Upload {
     }
 }
