@@ -60,7 +60,7 @@ public class Roldan_DeliverRequirment {
         }
 
         // Display information
-        System.out.println("\n--- NOTIFICATION ---");
+        System.out.println("\n--- NOTIFICATION --- ");
         System.out.println("Upload Date: " + day + "/" + month + "/" + year);
         System.out.println("Teacher Name: " + teacherName);
         System.out.println("Target Grade: " + targetGrade);
