@@ -53,7 +53,7 @@ public class Pecore_NotificationUploadSection {
 
 
         // Where the information will be placed
-        System.out.println("\n--- NOTIFICATION INFORMATION ---");
+        System.out.println("\n--- NOTIFICATION INFORMATION --- ");
 
         System.out.println("Name: " + name);
         System.out.println("Subject: " + subject);
