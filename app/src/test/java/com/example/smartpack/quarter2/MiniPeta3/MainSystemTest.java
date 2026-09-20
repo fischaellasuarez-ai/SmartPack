@@ -1,7 +1,6 @@
 package com.example.smartpack.quarter2.MiniPeta3;
 
 import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
@@ -13,23 +12,33 @@ public class MainSystemTest {
         /*
          * 1. THE VIRTUAL KEYBOARD
          *
-         * StringBuilder stores everything that
-         * the user would normally type.
+         * A StringBuilder acts as our virtual keyboard.
+         * Instead of physically typing into the console,
+         * we add every word or number the user would type.
          */
         StringBuilder simulatedUserInput =
                 new StringBuilder();
 
         System.out.println(
-                "--- GENERATING SIMULATED USER INPUTS ---"
+                "\n-------------------------------"
+        );
+        System.out.println(
+                "       SmartPack System"
+        );
+        System.out.println(
+                "-----------------------------------"
         );
 
 
         /*
          * PART 1: LOGIN
+         *
+         * These inputs simulate the user choosing Login,
+         * entering the username, and entering the password.
          */
 
         System.out.println(
-                "Generating Login inputs..."
+                "\nGenerating Login inputs..."
         );
 
         simulatedUserInput.append("Login\n");
@@ -39,6 +48,9 @@ public class MainSystemTest {
 
         /*
          * PART 2: NOTIFICATION UPLOAD
+         *
+         * These inputs simulate the teacher entering
+         * the subject and requirement.
          */
 
         System.out.println(
@@ -50,7 +62,11 @@ public class MainSystemTest {
 
 
         /*
-         * PART 3: DELIVER REQUIREMENT
+         * PART 3: DELIVER NOTIFICATION
+         *
+         * These inputs simulate the teacher entering
+         * the date, teacher name, target grade,
+         * target section, and notification status.
          */
 
         System.out.println(
@@ -70,33 +86,35 @@ public class MainSystemTest {
 
         /*
          * PART 4: LIST OF REQUIREMENTS
+         *
+         * These inputs simulate the user entering
+         * two additional requirements.
          */
 
         System.out.println(
                 "Generating List of Requirements inputs..."
         );
 
-        // Number of additional requirements
         simulatedUserInput.append("2\n");
-
-        // Additional requirement #1
         simulatedUserInput.append("BlackMarker\n");
-
-        // Additional requirement #2
         simulatedUserInput.append(
                 "coloring materials\n"
         );
 
 
         System.out.println(
-                "--- INPUT GENERATION COMPLETE ---\n"
+                "\n--- INPUT COMPLETE ---"
         );
 
 
         /*
          * 2. THE MAGIC CONVERSION
          *
-         * Convert the StringBuilder into an InputStream.
+         * This converts all the simulated inputs
+         * into an InputStream.
+         *
+         * It allows Java to read the StringBuilder
+         * as if the inputs came from a keyboard.
          */
         ByteArrayInputStream inputStream =
                 new ByteArrayInputStream(
@@ -108,24 +126,47 @@ public class MainSystemTest {
 
         /*
          * 3. THE AUTOMATED SCANNER
+         *
+         * The Scanner reads the simulated inputs.
+         *
+         * Whenever the SmartPack program uses
+         * nextInt() or nextLine(), it reads
+         * from the simulated keyboard.
          */
         Scanner scanner =
                 new Scanner(inputStream);
 
 
         /*
-         * 4. RUN THE ACTUAL SMART-PACK SYSTEM
+         * 4. RUNNING YOUR ACTUAL SMART-PACK SYSTEM
+         *
+         * Create an object of the Suarez_MainMenu class.
+         * Then use start(scanner) to run all parts
+         * of the SmartPack system.
          */
         Suarez_MainMenu mainSystem =
                 new Suarez_MainMenu();
-
 
         mainSystem.start(scanner);
 
 
         /*
-         * Close the Scanner after the test.
+         * 5. TEST COMPLETE
+         *
+         * This message shows that the automated
+         * SmartPack system test has finished.
          */
+        System.out.println(
+                "\n-------------------------------"
+        );
+        System.out.println(
+                "       TEST COMPLETE"
+        );
+        System.out.println(
+                "-----------------------------------"
+        );
+
+
         scanner.close();
     }
 }
