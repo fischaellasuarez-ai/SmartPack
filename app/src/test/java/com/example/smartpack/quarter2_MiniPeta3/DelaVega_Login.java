@@ -1,11 +1,25 @@
 package com.example.smartpack.quarter2_MiniPeta3;
 
+import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-class login {
-    public static void main(String[] args) {
+public class DelaVega_Login {
 
-        Scanner input = new Scanner(System.in);
+    @Test
+    public void Login() {
+
+        // Simulated user input
+        String simulatedInput =
+                "Login\n" +
+                        "Max\n" +
+                        "1234\n";
+
+        ByteArrayInputStream inputStream =
+                new ByteArrayInputStream(simulatedInput.getBytes());
+
+        Scanner input = new Scanner(inputStream);
 
         System.out.print("Enter Login or Sign in: ");
         String choice = input.nextLine();
@@ -17,10 +31,14 @@ class login {
             System.out.print("Enter username: ");
             String username = input.nextLine();
 
+            System.out.println(username);
+
             System.out.print("Enter password: ");
             String password = input.nextLine();
 
-            if (username.equals("Max") && password.equals("1234")) {
+            System.out.println(password);
+
+            if (username.equals("Sixson") && password.equals("1234")) {
                 System.out.println("Login successful!");
             } else {
                 System.out.println("Incorrect username or password.");
@@ -30,13 +48,13 @@ class login {
 
             System.out.println("\n--- SIGN IN ---");
 
-            System.out.print("Enter Email: ");
+            System.out.println("Enter Email: ");
             String email = input.nextLine();
 
-            System.out.print("Create password: ");
+            System.out.println("Create password: ");
             String password = input.nextLine();
 
-            System.out.println("Account created successfully!");
+            System.out.print("Account created successfully!");
 
         } else {
 
