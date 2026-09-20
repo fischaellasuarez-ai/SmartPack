@@ -1,4 +1,4 @@
-package com.example.smartpack.quarter2_MiniPeta3;
+package com.example.smartpack.quarter2.MiniPeta3;
 
 import org.junit.Test;
 
@@ -48,7 +48,7 @@ public class Suarez_MainMenu {
 
 
         //Lgoin(Dela Vega)
-        System.out.println("\n-------------------------- --");
+        System.out.println("\n-----------------------------");
         System.out.println("LOGIN");
         System.out.println("-----------------------------");
 
@@ -317,5 +317,8 @@ public class Suarez_MainMenu {
                             requirements[i]
             );
         }
+    }
+
+    public void start(Scanner scanner) {
     }
 }
