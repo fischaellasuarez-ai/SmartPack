@@ -54,7 +54,7 @@ public class DelaVega_Login {
             System.out.println("Create password: ");
             String password = input.nextLine();
 
-            System.out.print("Account created successfully!");
+            System.out.print("Account created successfully! ");
 
         } else {
 
