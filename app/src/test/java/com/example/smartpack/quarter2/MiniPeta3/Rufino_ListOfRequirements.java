@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Rufino_ListOfRequirments {
+public class Rufino_ListOfRequirements {
 
     @Test
     public void ListOfRequirments() {
