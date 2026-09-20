@@ -48,7 +48,7 @@ public class Suarez_MainMenu {
 
 
         //Lgoin(Dela Vega)
-        System.out.println("\n-----------------------------");
+        System.out.println("\n-------------------------- --");
         System.out.println("LOGIN");
         System.out.println("-----------------------------");
 
