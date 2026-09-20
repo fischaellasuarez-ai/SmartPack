@@ -34,7 +34,7 @@ public class Rufino_ListOfRequirements {
         System.out.print("Enter subject: ");
         String subject = scanner.nextLine();
 
-        System.out.print("Enter number of requirements: ");
+        System.out.print("Enter number of requirements:  ");
         int number = scanner.nextInt();
         scanner.nextLine();
 
