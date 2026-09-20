@@ -1,13 +1,30 @@
 package com.example.smartpack.quarter2_MiniPeta3;
 
+import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-class Deliverrequirment {
+public class Roldan_DeliverRequirment {
 
     // The delivering of requirements
-    public static void main(String[] args) {
+    @Test
+    public void DeliverRequirment() {
 
-        Scanner input = new Scanner(System.in);
+        // Simulated user input
+        String simulatedInput =
+                "18\n" +
+                        "9\n" +
+                        "2026\n" +
+                        "Ms.Roldan\n" +
+                        "11\n" +
+                        "St.Isidore of Seville\n" +
+                        "yes\n";
+
+        ByteArrayInputStream inputStream =
+                new ByteArrayInputStream(simulatedInput.getBytes());
+
+        Scanner input = new Scanner(inputStream);
 
         System.out.print("Enter Date Day: ");
         int day = input.nextInt();
@@ -43,17 +60,13 @@ class Deliverrequirment {
         }
 
         // Display information
-        System.out.println("\n--- Requirement Information ---");
+        System.out.println("\n--- NOTIFICATION ---");
         System.out.println("Upload Date: " + day + "/" + month + "/" + year);
         System.out.println("Teacher Name: " + teacherName);
         System.out.println("Target Grade: " + targetGrade);
         System.out.println("Target Section: " + targetSection);
-        System.out.println("Notification  Sent: " + notificationSent);
+        System.out.println("Notification Sent: " + notificationSent);
 
         input.close();
     }
-
-    public static class DeliverRequirment {
-    }
 }
-
