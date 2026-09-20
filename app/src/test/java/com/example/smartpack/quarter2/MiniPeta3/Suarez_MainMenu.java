@@ -66,7 +66,7 @@ public class Suarez_MainMenu {
         //Deliver Requirments(Roldan)
         System.out.println("\n-----------------------------");
         System.out.println("DELIVER REQUIREMENT");
-        System.out.println("-----------------------------");
+        System.out.println("------------------------------");
 
         deliverRequirement(input);
 
