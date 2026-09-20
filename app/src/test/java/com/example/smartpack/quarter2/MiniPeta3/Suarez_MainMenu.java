@@ -1,18 +1,15 @@
 package com.example.smartpack.quarter2.MiniPeta3;
 
 import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
 public class Suarez_MainMenu {
 
-
     String subject;
     String requirement;
 
-
-    //Main Menu test
+    // Main Menu test
     @Test
     public void MainMenu() {
 
@@ -40,50 +37,42 @@ public class Suarez_MainMenu {
                         "BlackMarker\n" +
                         "coloring materials\n";
 
-
         ByteArrayInputStream inputStream =
-                new ByteArrayInputStream(simulatedInput.getBytes());
+                new ByteArrayInputStream(
+                        simulatedInput.getBytes()
+                );
 
         Scanner input = new Scanner(inputStream);
 
-
-        //Lgoin(Dela Vega)
+        // Login
         System.out.println("\n-----------------------------");
         System.out.println("LOGIN");
         System.out.println("-----------------------------");
-
         Login(input);
 
-
-        //(Notification Upload(Pecore)
+        // Notification Upload
         System.out.println("\n-----------------------------");
         System.out.println("NOTIFICATION UPLOAD");
         System.out.println("-----------------------------");
-
         notificationUpload(input);
 
-
-        //Deliver Requirments(Roldan)
+        // Deliver Requirements
         System.out.println("\n-----------------------------");
         System.out.println("DELIVER REQUIREMENT");
-        System.out.println("------------------------------");
-
+        System.out.println("-----------------------------");
         deliverRequirement(input);
 
-
-        //List or Requirements(Rufino)
+        // List of Requirements
         System.out.println("\n-----------------------------");
         System.out.println("LIST OF REQUIREMENTS");
         System.out.println("-----------------------------");
-
         listOfRequirements(input);
-
 
         input.close();
     }
 
 
-   //Login (Dela Vega)
+    // Dela Vega(Login)
     public void Login(Scanner input) {
 
         System.out.print("Enter Login or Sign in: ");
@@ -95,12 +84,10 @@ public class Suarez_MainMenu {
 
             System.out.print("Enter username: ");
             String username = input.nextLine();
-
             System.out.println(username);
 
             System.out.print("Enter password: ");
             String password = input.nextLine();
-
             System.out.println(password);
 
             if (username.equals("Max") &&
@@ -136,7 +123,7 @@ public class Suarez_MainMenu {
     }
 
 
-    //(Notification Upload(Pecore)
+    // Notification Upload(Pecore)
     public void notificationUpload(Scanner input) {
 
         System.out.print("Enter Subject: ");
@@ -149,7 +136,6 @@ public class Suarez_MainMenu {
                 requirement.isEmpty()) {
 
             System.out.println("Upload Failed");
-
             System.out.println(
                     "Subject or Requirement is empty."
             );
@@ -174,10 +160,9 @@ public class Suarez_MainMenu {
         }
     }
 
-    //Deliver Requirments(Roldan)
-    public void deliverRequirement(Scanner input) {
 
-        // The delivering of requirements
+    // Deliver Requirement(Roldan)
+    public void deliverRequirement(Scanner input) {
 
         System.out.print("Enter Date Day: ");
         int day = input.nextInt();
@@ -188,7 +173,8 @@ public class Suarez_MainMenu {
         System.out.print("Enter Date Year: ");
         int year = input.nextInt();
 
-        input.nextLine(); // Clear leftover Enter
+
+        input.nextLine();
 
         System.out.print("Enter Teacher Name: ");
         String teacherName = input.nextLine();
@@ -196,7 +182,8 @@ public class Suarez_MainMenu {
         System.out.print("Enter Target Grade: ");
         int targetGrade = input.nextInt();
 
-        input.nextLine(); // Clear leftover Enter
+
+        input.nextLine();
 
         System.out.print("Enter Target Section: ");
         String targetSection = input.nextLine();
@@ -218,13 +205,10 @@ public class Suarez_MainMenu {
             notificationSent = false;
         }
 
-
-        //where information will be displayed
         System.out.println(
                 "\n--- Requirement Information ---"
         );
 
-        // CONNECTED FROM NOTIFICATION UPLOAD
         System.out.println(
                 "Subject: " + subject
         );
@@ -234,8 +218,10 @@ public class Suarez_MainMenu {
         );
 
         System.out.println(
-                "Upload Date: " +
-                        day + "/" + month + "/" + year
+                "Upload Date: "
+                        + day + "/"
+                        + month + "/"
+                        + year
         );
 
         System.out.println(
@@ -251,27 +237,25 @@ public class Suarez_MainMenu {
         );
 
         System.out.println(
-                "Notification Sent: " +
-                        notificationSent
+                "Notification Sent: "
+                        + notificationSent
         );
     }
 
 
-    //List or Requirements(Rufino)
+    // List of Requirements(Rufino)
     public void listOfRequirements(Scanner scanner) {
 
         System.out.println(
-                "=== SMART-PACK: LIST OF REQUIREMENTS ==="
+                "--- LIST OF REQUIREMENTS ---"
         );
 
-        // CONNECTED FROM NOTIFICATION UPLOAD
         System.out.println(
                 "Subject: " + subject
         );
 
         System.out.println(
-                "Uploaded Requirement: " +
-                        requirement
+                "Uploaded Requirement: " + requirement
         );
 
         System.out.print(
@@ -280,45 +264,102 @@ public class Suarez_MainMenu {
 
         int number = scanner.nextInt();
 
+
         scanner.nextLine();
 
         String[] requirements =
                 new String[number];
 
-
         for (int i = 0; i < number; i++) {
 
             System.out.print(
-                    "Enter requirement " +
-                            (i + 1) + ": "
+                    "Enter requirement "
+                            + (i + 1) + ": "
             );
 
             requirements[i] =
                     scanner.nextLine();
         }
 
-
         System.out.println(
-                "\n=== REQUIREMENTS FOR " +
-                        subject + " ==="
+                "\n=== REQUIREMENTS FOR "
+                        + subject + " ==="
         );
 
-        // REQUIREMENT FROM NOTIFICATION UPLOAD
         System.out.println(
                 "1. " + requirement
         );
 
-
-        // ADDITIONAL REQUIREMENTS
         for (int i = 0; i < number; i++) {
 
             System.out.println(
-                    (i + 2) + ". " +
-                            requirements[i]
+                    (i + 2)
+                            + ". "
+                            + requirements[i]
             );
         }
     }
 
+
+    // SmartPack System
     public void start(Scanner scanner) {
+
+        System.out.println(
+                "\n-----------------------------"
+        );
+
+        System.out.println("LOGIN");
+
+        System.out.println(
+                "-----------------------------"
+        );
+
+        Login(scanner);
+
+
+        System.out.println(
+                "\n-----------------------------"
+        );
+
+        System.out.println(
+                "Notification Upload"
+        );
+
+        System.out.println(
+                "-----------------------------"
+        );
+
+        notificationUpload(scanner);
+
+
+        System.out.println(
+                "\n-----------------------------"
+        );
+
+        System.out.println(
+                "Deliver Requirements"
+        );
+
+        System.out.println(
+                "-----------------------------"
+        );
+
+        deliverRequirement(scanner);
+
+
+        System.out.println(
+                "\n-----------------------------"
+        );
+
+        System.out.println(
+                "List of Requirements"
+        );
+
+        System.out.println(
+                "-----------------------------"
+        );
+
+        listOfRequirements(scanner);
     }
-}
+
+} // closes Suarez_MainMenu
