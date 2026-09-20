@@ -13,8 +13,8 @@ public class MainSystemTest {
         /*
          * 1. THE VIRTUAL KEYBOARD
          *
-         * StringBuilder stores all the inputs
-         * that the user would normally type.
+         * StringBuilder stores everything that
+         * the user would normally type.
          */
         StringBuilder simulatedUserInput =
                 new StringBuilder();
@@ -24,20 +24,22 @@ public class MainSystemTest {
         );
 
 
-        // ==============================
-        // PART 1: LOGIN
-        // ==============================
+        /*
+         * PART 1: LOGIN
+         */
 
-        System.out.println("Generating Login inputs...");
+        System.out.println(
+                "Generating Login inputs..."
+        );
 
         simulatedUserInput.append("Login\n");
         simulatedUserInput.append("Max\n");
         simulatedUserInput.append("1234\n");
 
 
-        // ==============================
-        // PART 2: NOTIFICATION UPLOAD
-        // ==============================
+        /*
+         * PART 2: NOTIFICATION UPLOAD
+         */
 
         System.out.println(
                 "Generating Notification Upload inputs..."
@@ -47,9 +49,9 @@ public class MainSystemTest {
         simulatedUserInput.append("1 whiteboard\n");
 
 
-        // ==============================
-        // PART 3: DELIVER REQUIREMENT
-        // ==============================
+        /*
+         * PART 3: DELIVER REQUIREMENT
+         */
 
         System.out.println(
                 "Generating Deliver Requirement inputs..."
@@ -60,21 +62,30 @@ public class MainSystemTest {
         simulatedUserInput.append("2026\n");
         simulatedUserInput.append("Ms. Roldan\n");
         simulatedUserInput.append("11\n");
-        simulatedUserInput.append("St. Isidore of Seville\n");
+        simulatedUserInput.append(
+                "St. Isidore of Seville\n"
+        );
         simulatedUserInput.append("yes\n");
 
 
-        // ==============================
-        // PART 4: LIST OF REQUIREMENTS
-        // ==============================
+        /*
+         * PART 4: LIST OF REQUIREMENTS
+         */
 
         System.out.println(
                 "Generating List of Requirements inputs..."
         );
 
+        // Number of additional requirements
         simulatedUserInput.append("2\n");
+
+        // Additional requirement #1
         simulatedUserInput.append("BlackMarker\n");
-        simulatedUserInput.append("coloring materials\n");
+
+        // Additional requirement #2
+        simulatedUserInput.append(
+                "coloring materials\n"
+        );
 
 
         System.out.println(
@@ -85,7 +96,7 @@ public class MainSystemTest {
         /*
          * 2. THE MAGIC CONVERSION
          *
-         * Converts our StringBuilder into an InputStream.
+         * Convert the StringBuilder into an InputStream.
          */
         ByteArrayInputStream inputStream =
                 new ByteArrayInputStream(
@@ -97,27 +108,24 @@ public class MainSystemTest {
 
         /*
          * 3. THE AUTOMATED SCANNER
-         *
-         * The Scanner reads the simulated inputs.
          */
         Scanner scanner =
                 new Scanner(inputStream);
 
 
         /*
-         * 4. RUNNING YOUR ACTUAL PROGRAM
-         *
-         * This connects the test to your
-         * Suarez_MainMenu class.
+         * 4. RUN THE ACTUAL SMART-PACK SYSTEM
          */
         Suarez_MainMenu mainSystem =
                 new Suarez_MainMenu();
 
 
-        // Start the SmartPack system
         mainSystem.start(scanner);
 
 
+        /*
+         * Close the Scanner after the test.
+         */
         scanner.close();
     }
 }
