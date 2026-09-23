@@ -1,4 +1,4 @@
-package com.example.smartpack.quarter2.MiniPeta3;
+package MiniPeta3;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.smartpack.quarter2;
+package quarter2;
 
 import org.junit.Test;
 
