@@ -29,7 +29,7 @@ public class Roldan_DeliverRequirement {
         System.out.print("Enter Date Day: ");
         int day = input.nextInt();
 
-        System.out.print(" Enter Date Month: ");
+        System.out.print("Enter Date Month: ");
         int month = input.nextInt();
 
         System.out.print("Enter Date Year: ");
