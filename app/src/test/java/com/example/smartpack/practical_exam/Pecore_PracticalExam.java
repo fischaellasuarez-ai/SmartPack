@@ -19,7 +19,7 @@ public class GymAccessTest {
         automatedInput.append("2\n"); // Choose Hire Trainer
         automatedInput.append("1\n"); // Enter level 1 (Expected: Trainer Assigned)
 
-        // Step 3: Test Basic membership tier (Level 2)
+        // Step 3: Test Basic membership tier (Level 2) 
         automatedInput.append("2\n"); // Choose Hire Trainer
         automatedInput.append("2\n"); // Enter level 2 (Expected: Upgrade Required)
 
