@@ -5,11 +5,11 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Roldan_DeliverRequirment {
+public class Roldan_DeliverRequirement {
 
     // The delivering of requirements
     @Test
-    public void DeliverRequirment() {
+    public void DeliverRequirement() {
 
         // Simulated user input
         String simulatedInput =
