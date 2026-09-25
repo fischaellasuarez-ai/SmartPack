@@ -26,7 +26,7 @@ public class Roldan_DeliverRequirement {
 
         Scanner input = new Scanner(inputStream);
 
-        System.out.print("Enter Date Day: ");
+        System.out.print(" Enter Date Day: ");
         int day = input.nextInt();
 
         System.out.print("Enter Date Month: ");
