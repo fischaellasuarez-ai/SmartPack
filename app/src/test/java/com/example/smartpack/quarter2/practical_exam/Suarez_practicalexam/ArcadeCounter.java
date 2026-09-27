@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class ArcadeCounter {
 
     public static void main(String[] args) {
-        //  create Scanner and call start()
+        //  TODO:create Scanner and call start()
     }
 
     public void start(Scanner scanner) {
-        //  call buyTokens() then claimPrize()
+        //  TODO:call buyTokens() then claimPrize()
     }
 
     public void buyTokens(Scanner scanner) {
-        //  implement token-purchase menu
+        //  TODO:implement token-purchase menu
     }
 
     public void claimPrize(Scanner scanner) {
-        //  implement ticket-to-prize menu
+        //  TODO:implement ticket-to-prize menu
     }
 }
