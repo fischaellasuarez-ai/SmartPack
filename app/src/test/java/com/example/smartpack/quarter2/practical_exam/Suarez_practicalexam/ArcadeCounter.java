@@ -2,11 +2,11 @@ package com.example.smartpack.quarter2.practical_exam.Suarez_practicalexam;
 
 import java.util.Scanner;
 
-public class ArcadeSystem {
+public class ArcadeCounter {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        new ArcadeSystem().start(scanner);
+        new ArcadeCounter().start(scanner);
     }
 
     public void start(Scanner scanner) {
@@ -33,7 +33,7 @@ public class ArcadeSystem {
 
             Tokenconfirmation = scanner.nextInt();
 
-            // TODO: route Tokenconfirmation to the correct branch (Commit 3)
+
 
         } while (Tokenconfirmation != 4);
     }
@@ -44,6 +44,6 @@ public class ArcadeSystem {
         System.out.print("Insert your ticket: ");
         int Tickets = scanner.nextInt();
 
-        // TODO: check ticket threshold and show prize menu (Commit 3)
+
     }
 }
