@@ -5,11 +5,11 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Roldan_DeliverRequirment {
+public class Roldan_DeliverRequirement {
 
     // The delivering of requirements
     @Test
-    public void DeliverRequirment() {
+    public void DeliverRequirement() {
 
         // Simulated user input
         String simulatedInput =
@@ -26,7 +26,7 @@ public class Roldan_DeliverRequirment {
 
         Scanner input = new Scanner(inputStream);
 
-        System.out.print("Enter Date Day: ");
+        System.out.print(" Enter Date Day: ");
         int day = input.nextInt();
 
         System.out.print("Enter Date Month: ");
