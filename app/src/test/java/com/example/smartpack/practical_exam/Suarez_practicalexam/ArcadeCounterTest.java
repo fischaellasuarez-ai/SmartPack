@@ -17,11 +17,11 @@ public class ArcadeCounterTest {
 
         // Step 2: Test low ticket count for prize (< 500)
         automatedInput.append("2\n"); // Choose Claim Prize
-        automatedInput.append("200\n"); // Enter 200 tickets (Expected: Keep Playing)
+        automatedInput.append("200\n"); // Insert 200 tickets (Expected: Keep Playing)
 
         // Step 3: Test high ticket count for prize (>= 500)
         automatedInput.append("2\n"); // Choose Claim Prize
-        automatedInput.append("600\n"); // Enter 600 tickets (Expected: Teddy Bear Won)
+        automatedInput.append("600\n"); // Insert 600 tickets (Expected: Teddy Bear Won)
 
         // Step 4: Exit system
         automatedInput.append("3\n"); // Choose Exit
