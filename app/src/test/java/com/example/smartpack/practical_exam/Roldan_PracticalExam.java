@@ -15,7 +15,27 @@ public class Roldan_PracticalExam {
             System.out.println("3. Exit");
             System.out.print("Choose: ");
 
-            choice = 3;
+            choice = scanner.nextInt();
+
+            if (choice == 1) {
+
+                System.out.println("Book borrowed successfully!");
+
+            } else if (choice == 2) {
+
+                System.out.println("Pay Fines");
+
+            } else if (choice == 3) {
+
+                System.out.println(
+                        "Thank you for using the Library Kiosk! Goodbye."
+                );
+
+            } else {
+
+                System.out.println("Invalid choice.");
+
+            }
 
         } while (choice != 3);
     }
