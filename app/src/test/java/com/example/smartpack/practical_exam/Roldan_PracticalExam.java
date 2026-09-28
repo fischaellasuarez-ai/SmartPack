@@ -6,10 +6,11 @@ public class Roldan_PracticalExam {
 
     public void start(Scanner scanner) {
 
+        double fine = 15;
         int choice;
 
         do {
-            System.out.println("~~~ LIBRARY KIOSK  ~~~");
+            System.out.println("~~~ LIBRARY KIOSK ~~~");
             System.out.println("1. Borrow Book");
             System.out.println("2. Pay Fines");
             System.out.println("3. Exit");
@@ -23,7 +24,22 @@ public class Roldan_PracticalExam {
 
             } else if (choice == 2) {
 
-                System.out.println("Pay Fines");
+                System.out.println("Fine: " + fine);
+                System.out.print("Enter payment: ");
+
+                double payment = scanner.nextDouble();
+
+                if (payment < fine) {
+
+                    System.out.println("Insufficient payment.");
+
+                } else {
+
+                    System.out.println("Payment successful!");
+                    System.out.println("Change: " + (payment - fine));
+
+                    fine = 0;
+                }
 
             } else if (choice == 3) {
 
