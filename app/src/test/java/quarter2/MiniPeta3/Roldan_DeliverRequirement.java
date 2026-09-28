@@ -1,4 +1,4 @@
-package MiniPeta3;
+package quarter2.MiniPeta3;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.smartpack.practical_exam;
+package quarter2.practical_exam.Pecore_practicalexam;
 
 import org.junit.Test;
 import java.io.ByteArrayInputStream;
@@ -30,7 +30,7 @@ public class GymAccessTest {
 
         ByteArrayInputStream inputStream = new ByteArrayInputStream(automatedInput.toString().getBytes());
         Scanner scanner = new Scanner(inputStream);
-        GymMenu gymSystem = new GymMenu();
+        GymAccessTest gymSystem = new GymAccessTest();
         gymSystem.start(scanner);
     }
 }
