@@ -37,7 +37,7 @@ public class Roldan_DeliverRequirement {
 
         input.nextLine(); // Clear leftover Enter
 
-        System.out.print("Enter Teacher Name: ");
+        System.out.print("Enter Teacher Name:  ");
         String teacherName = input.nextLine();
 
         System.out.print("Enter Target Grade: ");
