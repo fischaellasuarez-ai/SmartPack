@@ -69,8 +69,8 @@ public class ArcadeCounter {
             } else {
                 System.out.println("\n###### HERE IS YOUR PRIZE######");
                 System.out.println();
-                System.out.println(" *$* TEDDY BEAR *$*         ");
-                System.out.println(" !!!CONGRATULATION!!!      ");
+                System.out.println("         *$* TEDDY BEAR *$*      ");
+                System.out.println("        !!!CONGRATULATION!!!     ");
             }
         } else {
             System.out.println("Ticket invalid count.");
