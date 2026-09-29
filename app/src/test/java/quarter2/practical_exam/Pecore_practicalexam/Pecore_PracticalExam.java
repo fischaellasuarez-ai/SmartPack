@@ -5,134 +5,150 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class GymAccessTest<GymAccess> {
+public class GymAccessTest {
 
     @Test
-    public void testGymFlow() {
+    public <GymAccess> void testGymFlow() {
 
-        StringBuilder automatedInput = new StringBuilder();
+        // Repeat the entire test 3 times
+        for (int testRun = 1; testRun <= 3; testRun++) {
 
-        System.out.println("--- GENERATING GYM TEST DATA ---");
+            System.out.println();
+            System.out.println("======================================");
+            System.out.println("          TEST RUN " + testRun);
+            System.out.println("======================================");
 
-        // =====================================
-        // ENTER GYM
-        // =====================================
+            StringBuilder automatedInput = new StringBuilder();
 
-        automatedInput.append("1\n");
-
-        // Cardio Area
-        automatedInput.append("1\n");
-
-        // Weightlifting Area
-        automatedInput.append("2\n");
-
-        // Exercise Area
-        automatedInput.append("3\n");
-
-        // Return to Main Menu
-        automatedInput.append("4\n");
+            System.out.println("--- GENERATING GYM TEST DATA ---");
 
 
-        // =====================================
-        // MEMBERSHIP MENU
-        // =====================================
+            // =====================================
+            // ENTER GYM
+            // =====================================
 
-        automatedInput.append("2\n");
+            automatedInput.append("1\n");
 
-        // VIP
-        automatedInput.append("1\n");
+            // Cardio Area
+            automatedInput.append("1\n");
 
-        // Basic
-        automatedInput.append("2\n");
+            // Weightlifting Area
+            automatedInput.append("2\n");
 
-        // Compare
-        automatedInput.append("3\n");
+            // Exercise Area
+            automatedInput.append("3\n");
 
-        // Return
-        automatedInput.append("4\n");
-
-
-        // =====================================
-        // TRAINER MENU
-        // =====================================
-
-        automatedInput.append("3\n");
-
-        // Hire Trainer
-        automatedInput.append("1\n");
-
-        // VIP Level 1
-        automatedInput.append("1\n");
-
-        // Hire Trainer again
-        automatedInput.append("1\n");
-
-        // Basic Level 2
-        automatedInput.append("2\n");
-
-        // Trainer Information
-        automatedInput.append("2\n");
-
-        // Return
-        automatedInput.append("3\n");
+            // Return to Main Menu
+            automatedInput.append("4\n");
 
 
-        // =====================================
-        // GYM SCHEDULE
-        // =====================================
+            // =====================================
+            // MEMBERSHIP MENU
+            // =====================================
 
-        automatedInput.append("4\n");
+            automatedInput.append("2\n");
 
-        // Monday
-        automatedInput.append("1\n");
+            // VIP
+            automatedInput.append("1\n");
 
-        // Wednesday
-        automatedInput.append("3\n");
+            // Basic
+            automatedInput.append("2\n");
 
-        // Saturday
-        automatedInput.append("6\n");
+            // Compare
+            automatedInput.append("3\n");
 
-        // Return
-        automatedInput.append("8\n");
-
-
-        // =====================================
-        // EXIT
-        // =====================================
-
-        automatedInput.append("5\n");
+            // Return to Main Menu
+            automatedInput.append("4\n");
 
 
-        System.out.println("--- TEST DATA GENERATION COMPLETE ---\n");
+            // =====================================
+            // TRAINER MENU
+            // =====================================
+
+            automatedInput.append("3\n");
+
+            // Hire Trainer
+            automatedInput.append("1\n");
+
+            // VIP Level 1
+            automatedInput.append("1\n");
+
+            // Hire Trainer again
+            automatedInput.append("1\n");
+
+            // Basic Level 2
+            automatedInput.append("2\n");
+
+            // Trainer Information
+            automatedInput.append("2\n");
+
+            // Return to Main Menu
+            automatedInput.append("3\n");
 
 
-        // =====================================
-        // CREATE AUTOMATED INPUT
-        // =====================================
+            // =====================================
+            // GYM SCHEDULE
+            // =====================================
 
-        ByteArrayInputStream inputStream =
-                new ByteArrayInputStream(
-                        automatedInput.toString().getBytes()
-                );
+            automatedInput.append("4\n");
 
-        Scanner scanner = new Scanner(inputStream);
+            // Monday
+            automatedInput.append("1\n");
 
+            // Wednesday
+            automatedInput.append("3\n");
 
-        // =====================================
-        // START GYM SYSTEM
-        // =====================================
+            // Saturday
+            automatedInput.append("6\n");
 
-        GymAccess gymSystem = new GymAccess();
-
-        gymSystem.notifyAll(scanner);
+            // Return to Main Menu
+            automatedInput.append("8\n");
 
 
-        // =====================================
-        // CLOSE SCANNER
-        // =====================================
+            // =====================================
+            // EXIT
+            // =====================================
 
-        scanner.close();
+            automatedInput.append("5\n");
 
-        System.out.println("\n--- GYM TEST COMPLETE ---");
+
+            System.out.println("--- TEST DATA GENERATION COMPLETE ---");
+
+
+            // =====================================
+            // CREATE AUTOMATED INPUT
+            // =====================================
+
+            ByteArrayInputStream inputStream =
+                    new ByteArrayInputStream(
+                            automatedInput.toString().getBytes()
+                    );
+
+            Scanner scanner = new Scanner(inputStream);
+
+
+            // =====================================
+            // START GYM SYSTEM
+            // =====================================
+
+            GymAccess gymSystem = new GymAccess();
+
+            gymSystem.notify(scanner);
+
+
+            // =====================================
+            // CLOSE SCANNER
+            // =====================================
+
+            scanner.close();
+
+            System.out.println();
+            System.out.println("--- TEST RUN " + testRun + " COMPLETE ---");
+        }
+
+        System.out.println();
+        System.out.println("======================================");
+        System.out.println("       ALL TEST RUNS COMPLETE");
+        System.out.println("======================================");
     }
 }
