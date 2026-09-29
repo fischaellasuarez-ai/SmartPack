@@ -1,154 +1,258 @@
 package quarter2.practical_exam.Pecore_practicalexam;
 
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class GymAccessTest {
+class GymAccess {
 
-    @Test
-    public <GymAccess> void testGymFlow() {
+    public void start(Scanner scanner) {
 
-        // Repeat the entire test 3 times
-        for (int testRun = 1; testRun <= 3; testRun++) {
+        boolean running = true;
 
-            System.out.println();
-            System.out.println("======================================");
-            System.out.println("          TEST RUN " + testRun);
-            System.out.println("======================================");
+        while (running) {
 
-            StringBuilder automatedInput = new StringBuilder();
+            System.out.println("\n========== GYM ACCESS ==========");
+            System.out.println("1. Enter Gym");
+            System.out.println("2. Membership Information");
+            System.out.println("3. Hire Trainer");
+            System.out.println("4. Gym Schedule");
+            System.out.println("5. Exit");
+            System.out.println("================================");
 
-            System.out.println("--- GENERATING GYM TEST DATA ---");
+            System.out.print("Enter your choice: ");
 
+            int choice = scanner.nextInt();
 
-            // =====================================
-            // ENTER GYM
-            // =====================================
+            switch (choice) {
 
-            automatedInput.append("1\n");
+                case 1:
+                    enterGym(scanner);
+                    break;
 
-            // Cardio Area
-            automatedInput.append("1\n");
+                case 2:
+                    membershipMenu(scanner);
+                    break;
 
-            // Weightlifting Area
-            automatedInput.append("2\n");
+                case 3:
+                    trainerMenu(scanner);
+                    break;
 
-            // Exercise Area
-            automatedInput.append("3\n");
+                case 4:
+                    gymSchedule(scanner);
+                    break;
 
-            // Return to Main Menu
-            automatedInput.append("4\n");
+                case 5:
+                    System.out.println("Exiting Gym System...");
+                    running = false;
+                    break;
 
-
-            // =====================================
-            // MEMBERSHIP MENU
-            // =====================================
-
-            automatedInput.append("2\n");
-
-            // VIP
-            automatedInput.append("1\n");
-
-            // Basic
-            automatedInput.append("2\n");
-
-            // Compare
-            automatedInput.append("3\n");
-
-            // Return to Main Menu
-            automatedInput.append("4\n");
-
-
-            // =====================================
-            // TRAINER MENU
-            // =====================================
-
-            automatedInput.append("3\n");
-
-            // Hire Trainer
-            automatedInput.append("1\n");
-
-            // VIP Level 1
-            automatedInput.append("1\n");
-
-            // Hire Trainer again
-            automatedInput.append("1\n");
-
-            // Basic Level 2
-            automatedInput.append("2\n");
-
-            // Trainer Information
-            automatedInput.append("2\n");
-
-            // Return to Main Menu
-            automatedInput.append("3\n");
-
-
-            // =====================================
-            // GYM SCHEDULE
-            // =====================================
-
-            automatedInput.append("4\n");
-
-            // Monday
-            automatedInput.append("1\n");
-
-            // Wednesday
-            automatedInput.append("3\n");
-
-            // Saturday
-            automatedInput.append("6\n");
-
-            // Return to Main Menu
-            automatedInput.append("8\n");
-
-
-            // =====================================
-            // EXIT
-            // =====================================
-
-            automatedInput.append("5\n");
-
-
-            System.out.println("--- TEST DATA GENERATION COMPLETE ---");
-
-
-            // =====================================
-            // CREATE AUTOMATED INPUT
-            // =====================================
-
-            ByteArrayInputStream inputStream =
-                    new ByteArrayInputStream(
-                            automatedInput.toString().getBytes()
-                    );
-
-            Scanner scanner = new Scanner(inputStream);
-
-
-            // =====================================
-            // START GYM SYSTEM
-            // =====================================
-
-            GymAccess gymSystem = new GymAccess();
-
-            gymSystem.notify(scanner);
-
-
-            // =====================================
-            // CLOSE SCANNER
-            // =====================================
-
-            scanner.close();
-
-            System.out.println();
-            System.out.println("--- TEST RUN " + testRun + " COMPLETE ---");
+                default:
+                    System.out.println("Invalid choice.");
+            }
         }
+    }
 
-        System.out.println();
-        System.out.println("======================================");
-        System.out.println("       ALL TEST RUNS COMPLETE");
-        System.out.println("======================================");
+
+    public void enterGym(Scanner scanner) {
+
+        boolean running = true;
+
+        while (running) {
+
+            System.out.println("\n========== ENTER GYM ==========");
+            System.out.println("1. Cardio Area");
+            System.out.println("2. Weightlifting Area");
+            System.out.println("3. Exercise Area");
+            System.out.println("4. Return to Main Menu");
+
+            System.out.print("Choose: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    System.out.println("You entered the Cardio Area.");
+                    break;
+
+                case 2:
+                    System.out.println("You entered the Weightlifting Area.");
+                    break;
+
+                case 3:
+                    System.out.println("You entered the Exercise Area.");
+                    break;
+
+                case 4:
+                    System.out.println("Returning to Main Menu...");
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+
+    public void membershipMenu(Scanner scanner) {
+
+        boolean running = true;
+
+        while (running) {
+
+            System.out.println("\n======= MEMBERSHIP =======");
+            System.out.println("1. VIP Membership");
+            System.out.println("2. Basic Membership");
+            System.out.println("3. Compare Memberships");
+            System.out.println("4. Return to Main Menu");
+
+            System.out.print("Choose: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    System.out.println("VIP Membership - Level 1");
+                    System.out.println("Trainer Available");
+                    break;
+
+                case 2:
+                    System.out.println("Basic Membership - Level 2");
+                    System.out.println("Trainer Requires Upgrade");
+                    break;
+
+                case 3:
+                    System.out.println("\nVIP: Level 1 - Trainer Available");
+                    System.out.println("Basic: Level 2 - Upgrade Required");
+                    break;
+
+                case 4:
+                    System.out.println("Returning to Main Menu...");
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+
+    public void trainerMenu(Scanner scanner) {
+
+        boolean running = true;
+
+        while (running) {
+
+            System.out.println("\n========== TRAINER ==========");
+            System.out.println("1. Hire Trainer");
+            System.out.println("2. Trainer Information");
+            System.out.println("3. Return to Main Menu");
+
+            System.out.print("Choose: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+
+                case 1:
+
+                    System.out.println("\nEnter Membership Level:");
+                    System.out.println("1. VIP");
+                    System.out.println("2. Basic");
+
+                    int level = scanner.nextInt();
+
+                    if (level == 1) {
+                        System.out.println("Trainer Assigned!");
+                    }
+                    else if (level == 2) {
+                        System.out.println("Upgrade Required.");
+                    }
+                    else {
+                        System.out.println("Invalid Membership Level.");
+                    }
+
+                    break;
+
+                case 2:
+                    System.out.println("Personal Training");
+                    System.out.println("Weight Training");
+                    System.out.println("Cardio Training");
+                    System.out.println("Strength Training");
+                    break;
+
+                case 3:
+                    System.out.println("Returning to Main Menu...");
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+
+    public void gymSchedule(Scanner scanner) {
+
+        boolean running = true;
+
+        while (running) {
+
+            System.out.println("\n========== GYM SCHEDULE ==========");
+            System.out.println("1. Monday");
+            System.out.println("2. Tuesday");
+            System.out.println("3. Wednesday");
+            System.out.println("4. Thursday");
+            System.out.println("5. Friday");
+            System.out.println("6. Saturday");
+            System.out.println("7. Sunday");
+            System.out.println("8. Return to Main Menu");
+
+            System.out.print("Choose: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    System.out.println("Monday: 6 AM - 10 PM");
+                    break;
+
+                case 2:
+                    System.out.println("Tuesday: 6 AM - 10 PM");
+                    break;
+
+                case 3:
+                    System.out.println("Wednesday: 6 AM - 10 PM");
+                    break;
+
+                case 4:
+                    System.out.println("Thursday: 6 AM - 10 PM");
+                    break;
+
+                case 5:
+                    System.out.println("Friday: 6 AM - 10 PM");
+                    break;
+
+                case 6:
+                    System.out.println("Saturday: 7 AM - 8 PM");
+                    break;
+
+                case 7:
+                    System.out.println("Sunday: 8 AM - 6 PM");
+                    break;
+
+                case 8:
+                    System.out.println("Returning to Main Menu...");
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
     }
 }
