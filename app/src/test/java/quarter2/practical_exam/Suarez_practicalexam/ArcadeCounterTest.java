@@ -26,7 +26,7 @@ public class ArcadeCounterTest {
         // Step 4: Exit system
         automatedInput.append("3\n"); // Choose Exit
 
-        System.out.println("--- TEST DATA GENERATION COMPLETE ---\n");
+        System.out.println("--- TEST DATA  GENERATION COMPLETE ---\n");
 
         ByteArrayInputStream inputStream = new ByteArrayInputStream(automatedInput.toString().getBytes());
         Scanner scanner = new Scanner(inputStream);
