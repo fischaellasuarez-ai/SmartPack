@@ -114,7 +114,11 @@ public class GymAccessTest {
 
         GymAccess gymSystem = new GymAccess();
 
-        gymSystem.wait(scanner);
+        try {
+            gymSystem.wait();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         scanner.close();
     }
