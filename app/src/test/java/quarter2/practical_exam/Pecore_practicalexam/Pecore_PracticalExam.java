@@ -5,10 +5,10 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class GymAccessTest {
+public class GymAccessTest<GymAccess> {
 
     @Test
-    public <GymAccess> void testGymFlow() {
+    public void testGymFlow() {
 
         StringBuilder automatedInput = new StringBuilder();
 
@@ -105,6 +105,11 @@ public class GymAccessTest {
 
         System.out.println("--- TEST DATA GENERATION COMPLETE ---\n");
 
+
+        // =====================================
+        // CREATE AUTOMATED INPUT
+        // =====================================
+
         ByteArrayInputStream inputStream =
                 new ByteArrayInputStream(
                         automatedInput.toString().getBytes()
@@ -112,14 +117,22 @@ public class GymAccessTest {
 
         Scanner scanner = new Scanner(inputStream);
 
+
+        // =====================================
+        // START GYM SYSTEM
+        // =====================================
+
         GymAccess gymSystem = new GymAccess();
 
-        try {
-            gymSystem.wait();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        gymSystem.notifyAll(scanner);
+
+
+        // =====================================
+        // CLOSE SCANNER
+        // =====================================
 
         scanner.close();
+
+        System.out.println("\n--- GYM TEST COMPLETE ---");
     }
 }
