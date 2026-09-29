@@ -15,7 +15,31 @@ public class ArcadeCounter {
             System.out.println("OPTION 3. Exit");
             System.out.println();
 
-            running = false;
+            if (!scanner.hasNextInt()) {
+                break;
+            }
+
+            int mainChoice = scanner.nextInt();
+
+            switch (mainChoice) {
+                case 1:
+                    PurchasingOfToken();
+                    break;
+
+                case 2:
+                    ClaimYourPrize(scanner);
+                    break;
+
+                case 3:
+                    System.out.println("Thank you for playing! Please come again!");
+                    System.out.println();
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Your choice is invalid. Please try again.");
+                    break;
+            }
         }
     }
 
@@ -25,3 +49,4 @@ public class ArcadeCounter {
     private void ClaimYourPrize(Scanner scanner) {
     }
 }
+
