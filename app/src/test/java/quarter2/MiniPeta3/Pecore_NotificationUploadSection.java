@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
-public class Pecore_NotificationUploadSection {
+class Pecore_NotificationUploadSection {
 
     @Test
     public void NotificationUploadSection() {
@@ -53,6 +53,7 @@ public class Pecore_NotificationUploadSection {
 
 
         // Where the information will be placed
+        System.out.println("\n--- NOTIFICATION INFORMATION ---");
         System.out.println("\n--- NOTIFICATION INFORMATION --- ");
 
         System.out.println("Name: " + name);
