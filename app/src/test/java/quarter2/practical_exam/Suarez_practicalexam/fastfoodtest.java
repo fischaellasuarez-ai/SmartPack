@@ -47,6 +47,7 @@ public class FastFoodTest {
         System.out.println("Quantity: " + quantity);
         System.out.println("Total: ₱" + total);
 
+        sc.close();
 
     }
 }
