@@ -75,6 +75,6 @@ class GymAccess {
     }
 
     public void gymSchedule(Scanner scanner) {
-        System.out.println("Opening Gym Schedule.");
+        System.out.println("Opening Gym Schedule...");
     }
 }
