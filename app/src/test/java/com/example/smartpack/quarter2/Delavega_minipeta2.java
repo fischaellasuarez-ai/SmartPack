@@ -1,13 +1,13 @@
-package quarter2;
+package com.example.smartpack.quarter2;
 
 import org.junit.Test;
 
-class Pecore_MiniPeta2 {
+public class Delavega_minipeta2 {
     @Test
     public void printMyProfile() {
-        String myName = "Nick";
-        String petName = "Yuri and Cassie";
-        String favFood = "FriedChicken";
+        String myName = "John";
+        String petName = "Piona";
+        String favFood = "sinigang";
         int myAge = 15;
 
         System.out.println("<My DIGITAL Profile>");
