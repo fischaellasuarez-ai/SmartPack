@@ -16,6 +16,32 @@ public class FastFoodTest {
         System.out.print("Enter quantity: ");
         int quantity = sc.nextInt();
 
+        double price = 0;
+        String item = "";
+
+        switch (choice) {
+            case 1:
+                item = "Burger";
+                price = 50;
+                break;
+            case 2:
+                item = "Fries";
+                price = 30;
+                break;
+            case 3:
+                item = "Chicken";
+                price = 80;
+                break;
+            case 4:
+                item = "Soft Drink";
+                price = 25;
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                return;
+        }
+
+
 
     }
 }
