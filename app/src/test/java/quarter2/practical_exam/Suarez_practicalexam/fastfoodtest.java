@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class FastFoodTest {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
+        Scanner sc = new Scanner(System.in);
         System.out.println("=== FAST FOOD MENU ===");
         System.out.println("1. Burger - ₱50");
         System.out.println("2. Fries - ₱30");
@@ -40,7 +40,6 @@ public class FastFoodTest {
                 System.out.println("Invalid choice!");
                 return;
         }
-
         double total = price * quantity;
 
         System.out.println("\n=== ORDER SUMMARY ===");
@@ -49,6 +48,7 @@ public class FastFoodTest {
         System.out.println("Total: ₱" + total);
 
         sc.close();
+
     }
 }
 
