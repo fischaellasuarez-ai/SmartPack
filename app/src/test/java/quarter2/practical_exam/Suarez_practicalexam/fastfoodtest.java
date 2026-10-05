@@ -40,7 +40,12 @@ public class FastFoodTest {
                 System.out.println("Invalid choice!");
                 return;
         }
+        double total = price * quantity;
 
+        System.out.println("\n=== ORDER SUMMARY ===");
+        System.out.println("Item: " + item);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Total: ₱" + total);
 
 
     }
