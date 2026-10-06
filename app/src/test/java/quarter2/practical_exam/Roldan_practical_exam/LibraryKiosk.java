@@ -10,7 +10,6 @@ public class LibraryKiosk {
         int choice;
 
         do {
-            System.out.println("~~~ LIBRARY KIOSK  ~~~");
             System.out.println("~~~ LIBRARY KIOSK ~~~");
             System.out.println("1. Borrow Book");
             System.out.println("2. Pay Fines");
@@ -25,7 +24,6 @@ public class LibraryKiosk {
 
             } else if (choice == 2) {
 
-                System.out.println("Pay Fines");
                 System.out.println("Fine: " + fine);
                 System.out.print("Enter payment: ");
 
