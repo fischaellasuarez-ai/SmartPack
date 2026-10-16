@@ -178,10 +178,10 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="37dp"
-                                android:layout_height="37dp"
-                                android:background="@drawable/bg_circle_green"
-                                android:src="@drawable/pic3"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/rounded_beige"
+                                android:src="@drawable/pic7"
                                 android:scaleType="fitCenter"
                                 android:contentDescription="human_icon" />
 
@@ -211,14 +211,14 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="37dp"
-                                android:layout_height="37dp"
-                                android:background="@drawable/yellow_circle"
-                                android:gravity="center"
-                                android:text="▤"
-                                android:textColor="#725B15"
-                                android:textSize="22sp" />
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/bg_circle_green"
+                                android:src="@drawable/pic3"
+                                android:scaleType="fitCenter"
+                                android:contentDescription="human_icon" />
+
 
                             <TextView
                                 android:id="@+id/requirementsCount"
@@ -248,8 +248,8 @@
 
                             <com.google.android.material.imageview.ShapeableImageView
                                 android:id="@+id/pic10"
-                                android:layout_width="38dp"
-                                android:layout_height="33dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:contentDescription="Backpack reminder"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/pic10"
@@ -284,7 +284,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/createRequirementCard"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="77dp"
                 android:layout_marginBottom="7dp"
                 app:cardBackgroundColor="#0750AD"
                 app:cardCornerRadius="12dp"
@@ -309,19 +309,21 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="97dp">
+                        android:layout_height="65dp">
 
                         <TextView
                             android:id="@+id/recentTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
                             android:text="Recent Sent Requirements"
                             android:textColor="#222222"
-                            android:textSize="11sp"
+                            android:textSize="20sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.105" />
 
                         <TextView
                             android:id="@+id/recentViewAll"
@@ -329,7 +331,7 @@
                             android:layout_height="wrap_content"
                             android:text="View All >"
                             android:textColor="#21A876"
-                            android:textSize="8sp"
+                            android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -337,19 +339,22 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <!-- REQUIREMENT 1 -->
+                    <!-- REQUIREMENT 2 -->
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="60dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="31dp"
-                            android:layout_height="31dp"
-                            android:background="#E7E0F1"
-                            android:gravity="center"
-                            android:text="📄"
-                            android:textSize="15sp" />
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/bg_circle_green"
+                            android:contentDescription="human_icon"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic9" />
+
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -358,60 +363,18 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="140dp"
-                                android:padding="5dp">
-
-                                <TextView
-                                    android:layout_width="28dp"
-                                    android:layout_height="34dp"
-                                    android:background="#FFFFFF"
-                                    android:gravity="center"
-                                    android:text="☷"
-                                    android:textColor="#0750AD"
-                                    android:textSize="23sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="7dp"
-                                    android:text="Create Requirement"
-                                    android:textColor="#FFFFFF"
-                                    android:textSize="11sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintStart_toEndOf="@id/createRequirementCard"
-                                    tools:ignore="NotSibling" />
-
-                                <TextView
-                                    android:id="@+id/createRequirementTitle"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="7dp"
-                                    android:text="Create Requirement"
-                                    android:textColor="#FFFFFF"
-                                    android:textSize="11sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintStart_toEndOf="@id/createRequirementCard"
-                                    tools:ignore="NotSibling" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Gen Science - Activity #3"
+                                android:text="Gen science- Activity #3"
                                 android:textColor="#292929"
-                                android:textSize="8sp"
+                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Sent today at 7:23 AM"
+                                android:text="sent today at 7:23 AM"
                                 android:textColor="#777777"
                                 android:textSize="7sp" />
                         </LinearLayout>
@@ -421,7 +384,7 @@
                             android:layout_height="15dp"
                             android:background="@drawable/background2"
                             android:gravity="center"
-                            android:text="27/45 READY"
+                            android:text="20/45 READY"
                             android:textColor="#188A9C"
                             android:textSize="6sp" />
 
@@ -434,19 +397,21 @@
                             android:textSize="13sp" />
                     </LinearLayout>
 
-                    <!-- REQUIREMENT 2 -->
+                    <!-- REQUIREMENT 3 -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="89dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="31dp"
-                            android:layout_height="31dp"
-                            android:background="#F0E0E0"
-                            android:gravity="center"
-                            android:textSize="15sp" />
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/bg_circle_green"
+                            android:contentDescription="human_icon"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic10" />
+
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -460,7 +425,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Cied - Reflection Worksheet"
                                 android:textColor="#292929"
-                                android:textSize="8sp"
+                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -489,20 +454,20 @@
                             android:textSize="13sp" />
                     </LinearLayout>
 
-                    <!-- REQUIREMENT 3 -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="88dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="31dp"
-                            android:layout_height="31dp"
-                            android:background="#E0E8E8"
-                            android:drawableBottom="@drawable/pic11"
-                            android:gravity="center"
-                            android:textSize="15sp" />
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+
+                            android:contentDescription="human_icon"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic11" />
+
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -514,9 +479,9 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Gen Math - Project Requirements"
+                                android:text="Gen math- materials needed"
                                 android:textColor="#292929"
-                                android:textSize="8sp"
+                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -532,7 +497,7 @@
                             android:layout_height="15dp"
                             android:background="@drawable/background2"
                             android:gravity="center"
-                            android:text="42/45 READY"
+                            android:text="20/45 READY"
                             android:textColor="#188A9C"
                             android:textSize="6sp" />
 
