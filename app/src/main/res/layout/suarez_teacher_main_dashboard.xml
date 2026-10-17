@@ -1,5 +1,4 @@
-
-    <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,25 +12,28 @@
         android:id="@+id/backgroundImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/background"
-        android:scaleType="centerCrop"
         android:contentDescription="@null"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- BOTTOM NAVIGATION -->
     <ScrollView
         android:id="@+id/dashboardScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fillViewport="true"
         android:clipToPadding="false"
+        android:fillViewport="true"
         android:paddingBottom="8dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,33 +46,25 @@
             <!-- HEADER -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="72dp"
+                android:layout_height="105dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/logoImage"
-                    android:layout_width="38dp"
-                    android:layout_height="46dp"
-                    android:src="@drawable/smartpack_logo"
-                    android:scaleType="fitCenter"
+                    android:layout_width="61dp"
+                    android:layout_height="77dp"
                     android:contentDescription="SmartPack logo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/smartpack_logo"
                     tools:ignore="ImageContrastCheck" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SmartPack"
-                    android:textColor="#173A91"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <!-- TODAY'S OVERVIEW -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="74dp"
                 android:layout_marginBottom="6dp"
                 app:cardBackgroundColor="#FFF4D8"
                 app:cardCornerRadius="13dp"
@@ -81,45 +75,42 @@
                     android:layout_height="match_parent"
                     android:padding="6dp">
 
-                    <ImageView
-                        android:id="@+id/overviewIcon"
-                        android:layout_width="29dp"
-                        android:layout_height="36dp"
-                        android:contentDescription="Requirements overview"
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/pic7"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:shapeAppearanceOverlay="@style/CircleImage" />
 
                     <TextView
                         android:id="@+id/overviewTitle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_width="219dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
                         android:text="Today's Overview"
                         android:textColor="#252525"
-                        android:textSize="12sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/overviewIcon"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/viewAllButton" />
+                        app:layout_constraintEnd_toStartOf="@id/viewAllButton"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/overviewDescription"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="Here's what's happening in your\nclass today."
+                        android:layout_width="202dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="Here’s what’s happening in your class today."
                         android:textColor="#444444"
-                        android:textSize="9sp"
-                        app:layout_constraintStart_toEndOf="@id/overviewIcon"
-                        app:layout_constraintTop_toBottomOf="@id/overviewTitle"
-                        app:layout_constraintEnd_toStartOf="@id/viewAllButton" />
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/viewAllButton"
+                        tools:layout_editor_absoluteY="31dp" />
 
                     <Button
                         android:id="@+id/viewAllButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="34dp"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="#8FE8E8"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
                         android:paddingStart="10dp"
@@ -129,19 +120,24 @@
                         android:textColor="#111111"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        android:backgroundTint="#8FE8E8"
                         app:cornerRadius="9dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent" />
+                        app:layout_constraintVertical_bias="0.518" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- CLASS OVERVIEW -->
+
+            <!-- CREATE REQUIREMENT -->
+
+            <!-- RECENT SENT REQUIREMENTS -->
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="106dp"
+                android:layout_height="161dp"
                 android:layout_marginBottom="7dp"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="14dp"
@@ -158,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:text="Class overview"
                         android:textColor="#202020"
-                        android:textSize="11sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -177,13 +173,13 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/rounded_beige"
-                                android:src="@drawable/pic7"
-                                android:scaleType="fitCenter"
-                                android:contentDescription="human_icon" />
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/pic4"
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="#F6E8B0" />
 
                             <TextView
                                 android:id="@+id/classesCount"
@@ -200,7 +196,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Classes"
                                 android:textColor="#222222"
-                                android:textSize="9sp" />
+                                android:textSize="10sp" />
                         </LinearLayout>
 
                         <!-- REQUIREMENTS -->
@@ -211,13 +207,13 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/bg_circle_green"
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:scaleType="centerCrop"
                                 android:src="@drawable/pic3"
-                                android:scaleType="fitCenter"
-                                android:contentDescription="human_icon" />
+                                app:shapeAppearanceOverlay="@style/CircleImage"
+                                app:strokeColor="#BED7CE" />
 
 
                             <TextView
@@ -248,14 +244,12 @@
 
                             <com.google.android.material.imageview.ShapeableImageView
                                 android:id="@+id/pic10"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:contentDescription="Backpack reminder"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/pic10"
+                                android:src="@drawable/pic5"
                                 app:shapeAppearanceOverlay="@style/CircleImage"
-                                app:strokeColor="#3AAB83"
-                                app:strokeWidth="1dp" />
+                                app:strokeColor="#3AAB83" />
 
                             <TextView
                                 android:id="@+id/studentsReadyCount"
@@ -280,19 +274,106 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- CREATE REQUIREMENT -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/createRequirementCard"
                 android:layout_width="match_parent"
-                android:layout_height="77dp"
+                android:layout_height="88dp"
                 android:layout_marginBottom="7dp"
                 app:cardBackgroundColor="#0750AD"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp">
+
+                    <!-- Icon Container (Holds Document Icon + Plus Badge) -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/iconContainer"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- Base Document Icon -->
+                        <ImageView
+                            android:id="@+id/myImage"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:contentDescription="Document Icon"
+                            android:src="@drawable/folder_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/plusIcon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:contentDescription="Add Badge"
+                            android:src="@drawable/plus_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Title -->
+
+                    <!-- Subtitle -->
+                    <TextView
+                        android:id="@+id/overviewTitle3"
+                        android:layout_width="268dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Create Requirement"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/textView8"
+                        app:layout_constraintEnd_toStartOf="@id/arrowIcon"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@id/iconContainer"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_setVerticalChainStyle="packed" />
+
+                    <!-- Arrow (Right) -->
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="264dp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="4dp"
+                        android:text="Add and send requirements to your classes."
+                        android:textColor="#E0E0E0"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/overviewTitle3"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@id/overviewTitle3"
+                        app:layout_constraintTop_toBottomOf="@id/overviewTitle3" />
+
+                    <TextView
+                        android:id="@+id/arrowIcon"
+                        android:layout_width="11dp"
+                        android:layout_height="27dp"
+                        android:text="&gt;"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!-- RECENT SENT REQUIREMENTS -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -303,13 +384,13 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="336dp"
+                    android:layout_height="264dp"
                     android:orientation="vertical"
                     android:padding="8dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="65dp">
+                        android:layout_height="54dp">
 
                         <TextView
                             android:id="@+id/recentTitle"
@@ -341,19 +422,20 @@
                     <!-- REQUIREMENT 1 -->
                     <!-- REQUIREMENT 2 -->
 
+                    <!-- REQUIREMENT 3 -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="57dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:background="@drawable/bg_circle_green"
-                            android:contentDescription="human_icon"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/pic9" />
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pic9"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="#3AAB83" />
 
 
                         <LinearLayout
@@ -376,17 +458,17 @@
                                 android:layout_height="wrap_content"
                                 android:text="sent today at 7:23 AM"
                                 android:textColor="#777777"
-                                android:textSize="7sp" />
+                                android:textSize="10sp" />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="42dp"
+                            android:layout_width="64dp"
                             android:layout_height="15dp"
                             android:background="@drawable/background2"
                             android:gravity="center"
                             android:text="20/45 READY"
                             android:textColor="#188A9C"
-                            android:textSize="6sp" />
+                            android:textSize="10sp" />
 
                         <TextView
                             android:layout_width="18dp"
@@ -397,20 +479,19 @@
                             android:textSize="13sp" />
                     </LinearLayout>
 
-                    <!-- REQUIREMENT 3 -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="89dp"
+                        android:layout_height="71dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:background="@drawable/bg_circle_green"
-                            android:contentDescription="human_icon"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/pic10" />
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pic10"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="#3AAB83" />
 
 
                         <LinearLayout
@@ -425,7 +506,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Cied - Reflection Worksheet"
                                 android:textColor="#292929"
-                                android:textSize="20sp"
+                                android:textSize="17sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -433,20 +514,20 @@
                                 android:layout_height="wrap_content"
                                 android:text="Sent yesterday"
                                 android:textColor="#777777"
-                                android:textSize="7sp" />
+                                android:textSize="10sp" />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="42dp"
+                            android:layout_width="70dp"
                             android:layout_height="15dp"
                             android:background="@drawable/background2"
                             android:gravity="center"
                             android:text="20/45 READY"
                             android:textColor="#188A9C"
-                            android:textSize="6sp" />
+                            android:textSize="10sp" />
 
                         <TextView
-                            android:layout_width="18dp"
+                            android:layout_width="15dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text=">"
@@ -456,18 +537,17 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="88dp"
+                        android:layout_height="76dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-
-                            android:contentDescription="human_icon"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/pic11" />
-
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pic11"
+                            app:shapeAppearanceOverlay="@style/CircleImage"
+                            app:strokeColor="#3AAB83" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -481,7 +561,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Gen math- materials needed"
                                 android:textColor="#292929"
-                                android:textSize="20sp"
+                                android:textSize="17sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -489,17 +569,17 @@
                                 android:layout_height="wrap_content"
                                 android:text="Sent 2 days ago"
                                 android:textColor="#777777"
-                                android:textSize="7sp" />
+                                android:textSize="10sp" />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="42dp"
+                            android:layout_width="66dp"
                             android:layout_height="15dp"
                             android:background="@drawable/background2"
                             android:gravity="center"
                             android:text="20/45 READY"
                             android:textColor="#188A9C"
-                            android:textSize="6sp" />
+                            android:textSize="10sp" />
 
                         <TextView
                             android:layout_width="18dp"
@@ -515,99 +595,126 @@
 
             <!-- REMINDER -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="172dp"
+                android:layout_width="392dp"
+                android:layout_height="94dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/reminderImage"
-                    android:layout_width="107dp"
-                    android:layout_height="107dp"
-                    android:contentDescription="Backpack reminder"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/backpack"
-                    app:shapeAppearanceOverlay="@style/CircleImage"
-                    app:strokeColor="#3AAB83"
-                    app:strokeWidth="1dp" />
+                <!-- Icon Container (Holds Circular Backpack + Overlaid Check Mark) -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/reminderIconContainer"
+                    android:layout_width="74dp"
+                    android:layout_height="69dp">
 
+                    <!-- Main Circular Backpack Image -->
+
+                    <!-- Separated Checkmark Badge -->
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/reminderImage"
+                        android:layout_width="80dp"
+                        android:layout_height="68dp"
+                        android:contentDescription="Backpack reminder"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/backpack"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/CircleImage"
+                        app:strokeColor="#3AAB83" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/checkBadge"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="Checkmark"
+                        android:src="@drawable/check_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:shapeAppearanceOverlay="@style/CircleImage" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Text Container -->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="232dp"
+                    android:layout_height="81dp"
                     android:layout_marginStart="8dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="232dp"
                         android:layout_height="wrap_content"
                         android:text="REMINDER:"
                         android:textColor="#3AAB83"
-                        android:textSize="12sp"
+                        android:textSize="25sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="232dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Double check and make sure your\nstudents are ready!"
+                        android:text="Double check and make sure your students are ready!"
                         android:textColor="#202020"
-                        android:textSize="9sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- BOTTOM NAVIGATION -->
     <LinearLayout
         android:id="@+id/bottomNavigation"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
+        android:layout_width="411dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="839dp"
         android:background="#4BD0D2"
-        android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage">
+
 
         <ImageButton
             android:id="@+id/homeButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="20dp"
+            android:layout_height="85dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/home_icon"
-            android:scaleType="fitCenter"
-            android:padding="11dp"
             android:contentDescription="Home"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home_icon"
             app:tint="#000000" />
 
         <ImageButton
-            android:id="@+id/addButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/plusButton"
+            android:layout_width="1dp"
+            android:layout_height="90dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:contentDescription="Add requirement"
-            android:padding="9dp"
+            android:contentDescription="Add requriments"
+            android:padding="1dp"
             android:scaleType="fitCenter"
             android:src="@drawable/icon_plus"
-            app:tint="#FFFFFF" />
+            app:tint="#000000" />
 
         <ImageButton
             android:id="@+id/profileButton"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="86dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/human_icon"
-            android:scaleType="fitCenter"
-            android:padding="11dp"
             android:contentDescription="Profile"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/human_icon"
             app:tint="#000000" />
 
     </LinearLayout>
