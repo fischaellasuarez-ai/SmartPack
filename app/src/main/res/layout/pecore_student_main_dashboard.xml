@@ -5,26 +5,663 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAF7FC"
-    tools:context=".MainActivity">>
+    android:background="@drawable/background_student_main_dashboard">
 
-    <!--suppress AndroidDomInspection -->
-    <welcome
-        android:id="Welcome Student"
-        android:layout_width="111dp"
-        android:layout_height="69dp"
-        android:Students
-        android:text="TextView"
-        tools:ignore="InvalidId,MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="106dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+    <!-- ==================== HEADER ==================== -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/backpack"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="67dp" />
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Welcome text -->
+
+        <!-- SmartPack logo -->
+        <LinearLayout
+            android:layout_width="126dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="welcome"
+                android:textColor="#2E7D32"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="119dp"
+                android:layout_height="48dp"
+                android:text="Student"
+                android:textColor="#1B5E20"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="204dp"
+            android:layout_height="150dp"
+            android:contentDescription="SmartPack"
+            android:src="@drawable/smartpack_logo2"
+            app:tint="#1565C0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="16dp">
+
+        </LinearLayout>
+
+        <!-- Profile icon -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile"
+            app:shapeAppearanceOverlay="@style/CircleImage"
+            app:strokeColor="#BED7CE" />
+
+
+    </LinearLayout>
+
+    <!-- ==================== TODAY'S REQUIREMENTS ==================== -->
+    <LinearLayout
+        android:id="@+id/requirements_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/pic7"
+            android:contentDescription="Requirements"
+            app:tint="#E1DCC4" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Requirements"
+                android:textSize="18sp"
+                android:textColor="#1B5E20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bring the following for each SUBJECT today."
+                android:textSize="12sp"
+                android:textColor="#558B2F" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View All >"
+            android:textSize="13sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_rounded"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="7dp" />
+
+    </LinearLayout>
+
+    <!-- ==================== SUBJECT LIST ==================== -->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/requirements_header"
+        app:layout_constraintBottom_toTopOf="@id/reminder">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="8dp">
+
+            <!-- 1. Gen Science -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/gen_sci2"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:strokeColor="#BED7CE" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gen Science"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sir. Paul Angelo Pardilla"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open General Science"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- 2. Gen Math -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="38dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/gen_math2"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:strokeColor="#BED7CE" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gen Math"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sir. Rhaniel Ventura"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open General Mathematics"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- 3. CLED -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="39dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cled2"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:strokeColor="#BED7CE" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cled"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sir. Christian Barbero"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open CLED"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- 4. Life and Career Skills -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/lacs_icon"
+                    android:contentDescription="Life and Career Skills"
+                    app:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Life and Career Skills"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ms. Kim Alexis Encio"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open Life and Career Skills"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- 5. Mabisang Komunikasyon -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/mabisang_komunikasyon"
+                    android:contentDescription="Mabisang Komunikasyon"
+                    app:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mabisang Komunikasyon"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sir. Jonathan Royulada"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open Mabisang Komunikasyon"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- 6. Effective Communication -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/effective_communication"
+                    android:contentDescription="Effective Communication"
+                    app:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Effective Communication"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ms. Joyous Vinarao Cruz"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open Effective Communication"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- 7. Kasaysayan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/kasaysayan"
+                    android:contentDescription="Kasaysayan"
+                    app:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kasaysayan"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sir. Leomar Salazar"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open Kasaysayan"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- 8. Computer Programming -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/subject_bg"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/computer_programming"
+                    android:contentDescription="Computer Programming"
+                    app:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Computer Programming"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sir. Joseph Sixson"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="-90"
+                    android:src="@drawable/m3_split_button_chevron_avd"
+                    android:contentDescription="Open Computer Programming"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ==================== REMINDER ==================== -->
+    <LinearLayout
+        android:id="@+id/reminder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/reminder_bg"
+        android:backgroundTint="#85B398"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav">
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/reminderImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="Backpack reminder"
+                android:scaleType="centerCrop"
+                android:src="@drawable/backpack"
+                app:shapeAppearanceOverlay="@style/CircleImage"
+                app:strokeColor="#3AAB83"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/checkBadge"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="bottom|end"
+                android:contentDescription="Checkmark"
+                android:src="@drawable/check_icon"
+                app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REMINDER:"
+                android:textColor="#C62828"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Double check and make sure you have everything you need today!"
+                android:textColor="#424242"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ==================== BOTTOM NAV ==================== -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#85B398"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:contentDescription="Home"
+            android:src="@drawable/home2_icon"
+            app:tint="#2E7D32" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:contentDescription="Add"
+            android:src="@drawable/add_icon"
+            app:tint="#81C784" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:contentDescription="Profile"
+            android:src="@drawable/person_icon"
+            app:tint="#757575" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
