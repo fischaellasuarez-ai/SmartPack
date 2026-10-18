@@ -433,7 +433,7 @@
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/pic9"
+                            android:src="@drawable/gen_sci"
                             app:shapeAppearanceOverlay="@style/CircleImage"
                             app:strokeColor="#3AAB83" />
 
@@ -489,7 +489,7 @@
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/pic10"
+                            android:src="@drawable/cled"
                             app:shapeAppearanceOverlay="@style/CircleImage"
                             app:strokeColor="#3AAB83" />
 
@@ -545,7 +545,7 @@
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/pic11"
+                            android:src="@drawable/gen_math"
                             app:shapeAppearanceOverlay="@style/CircleImage"
                             app:strokeColor="#3AAB83" />
 
