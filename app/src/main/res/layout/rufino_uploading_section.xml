@@ -8,7 +8,6 @@
     android:background="#EAF7FC"
     tools:context=".MainActivity">
 
-    <!-- Soft cloud background (optional) -->
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="0dp"
@@ -42,7 +41,6 @@
             android:paddingTop="8dp"
             android:paddingBottom="16dp">
 
-            <!-- ========== LOGO ========== -->
             <ImageView
                 android:id="@+id/logoImage"
                 android:layout_width="72dp"
@@ -54,7 +52,6 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/smartpack_logo" />
 
-            <!-- ========== TODAY'S OVERVIEW ========== -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,7 +127,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- ========== CLASS OVERVIEW ========== -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -160,7 +156,6 @@
                         android:orientation="horizontal"
                         android:weightSum="3">
 
-                        <!-- Classes -->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -195,7 +190,6 @@
                                 android:textSize="12sp" />
                         </LinearLayout>
 
-                        <!-- Requirements Sent -->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -270,7 +264,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- ========== CREATE REQUIREMENT (header bar) ========== -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/createRequirementHeader"
                 android:layout_width="match_parent"
@@ -337,7 +330,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- ========== CREATE REQUIREMENT FORM ========== -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/createRequirementForm"
                 android:layout_width="match_parent"
@@ -353,7 +345,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- For : Grade Level + Section -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -370,7 +361,6 @@
                         android:weightSum="2"
                         android:layout_marginBottom="14dp">
 
-                        <!-- Grade Level dropdown -->
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/gradeLevelLayout"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -396,7 +386,7 @@
                                 android:padding="12dp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <!-- Section dropdown -->
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/sectionLayout"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -422,7 +412,6 @@
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
-                    <!-- Requirement Title -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -456,7 +445,6 @@
                             android:padding="12dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Date + Items to bring -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -464,7 +452,6 @@
                         android:weightSum="2"
                         android:layout_marginBottom="18dp">
 
-                        <!-- Date -->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -494,7 +481,7 @@
                                 app:boxCornerRadiusBottomEnd="10dp"
                                 app:hintTextColor="#666666"
                                 app:boxStrokeColor="#CCCCCC"
-                                app:startIconDrawable="@drawable/ic_calendar"
+                                app:startIconDrawable="@drawable/pic7"
                                 app:startIconTint="#555555">
 
                                 <AutoCompleteTextView
@@ -507,7 +494,7 @@
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>
 
-                        <!-- Items to bring -->
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -541,8 +528,6 @@
                                 app:iconTint="#555555" />
                         </LinearLayout>
                     </LinearLayout>
-
-                    <!-- Create & Send button -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/createSendButton"
                         android:layout_width="match_parent"
@@ -552,9 +537,6 @@
                         android:textColor="#2E6F40"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:backgroundTint="#2E6F40"
-                        app:cornerRadius="12dp"
-                        app:icon="@drawable/ic_send"
                         app:iconGravity="textStart"
                         app:iconPadding="8dp"
                         app:iconTint="#2E6F40" />
@@ -565,7 +547,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- ========== BOTTOM NAVIGATION ========== -->
     <LinearLayout
         android:id="@+id/bottomNavigation"
         android:layout_width="0dp"
