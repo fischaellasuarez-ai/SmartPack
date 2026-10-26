@@ -48,8 +48,8 @@
 
                 <ImageView
                     android:id="@+id/logoImage"
-                    android:layout_width="61dp"
-                    android:layout_height="77dp"
+                    android:layout_width="64dp"
+                    android:layout_height="75dp"
                     android:contentDescription="SmartPack"
                     android:scaleType="fitCenter"
                     android:src="@drawable/smartpack_logo"
@@ -642,8 +642,8 @@
     <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNavigation"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_width="415dp"
+        android:layout_height="81dp"
         android:background="#4BD0D2"
         android:orientation="horizontal"
         android:weightSum="3"
@@ -654,7 +654,7 @@
         <ImageButton
             android:id="@+id/homeButton"
             android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="Home"
@@ -666,7 +666,7 @@
         <ImageButton
             android:id="@+id/plusButton"
             android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="Add requirements"
@@ -678,7 +678,7 @@
         <ImageButton
             android:id="@+id/profileButton"
             android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="Profile"
