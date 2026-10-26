@@ -20,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- BOTTOM NAVIGATION -->
     <ScrollView
         android:id="@+id/dashboardScroll"
         android:layout_width="0dp"
@@ -30,10 +29,8 @@
         android:paddingBottom="8dp"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,7 +39,6 @@
             android:paddingStart="6dp"
             android:paddingEnd="6dp"
             android:paddingBottom="8dp">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,13 +50,14 @@
                     android:id="@+id/logoImage"
                     android:layout_width="61dp"
                     android:layout_height="77dp"
-                    android:contentDescription="SmartPack logo"
+                    android:contentDescription="SmartPack"
                     android:scaleType="fitCenter"
                     android:src="@drawable/smartpack_logo"
                     tools:ignore="ImageContrastCheck" />
 
             </LinearLayout>
 
+            <!-- Today's Overview -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="74dp"
@@ -74,46 +71,53 @@
                     android:layout_height="match_parent"
                     android:padding="6dp">
 
-                    <ImageView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/overviewImage"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pic7"
-                        app:shapeAppearanceOverlay="@style/CircleImage" />
+                        app:shapeAppearanceOverlay="@style/CircleImage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/overviewTitle"
-                        android:layout_width="219dp"
+                        android:layout_width="0dp"
                         android:layout_height="25dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="4dp"
                         android:text="Today's Overview"
                         android:textColor="#252525"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@id/viewAllButton"
+                        app:layout_constraintStart_toEndOf="@id/overviewImage"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/overviewContent"
-                        android:layout_width="202dp"
+                        android:layout_width="0dp"
                         android:layout_height="35dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="4dp"
                         android:text="Here’s what’s happening in your class today."
                         android:textColor="#444444"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toStartOf="@id/viewAllButton"
-                        tools:layout_editor_absoluteY="31dp" />
+                        app:layout_constraintStart_toEndOf="@id/overviewImage"
+                        app:layout_constraintTop_toBottomOf="@id/overviewTitle" />
 
                     <Button
                         android:id="@+id/viewAllButton"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="2dp"
                         android:backgroundTint="#8FE8E8"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
                         android:text="View All >"
                         android:textAllCaps="false"
                         android:textColor="#111111"
@@ -122,12 +126,12 @@
                         app:cornerRadius="9dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.518" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Class Overview -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="161dp"
@@ -157,7 +161,6 @@
                         android:gravity="center"
                         android:orientation="horizontal"
                         android:weightSum="3">
-
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -206,7 +209,6 @@
                                 android:src="@drawable/pic3"
                                 app:shapeAppearanceOverlay="@style/CircleImage"
                                 app:strokeColor="#BED7CE" />
-
 
                             <TextView
                                 android:id="@+id/requirementsCount"
@@ -265,6 +267,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Create Requirement -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/createRequirementCard"
                 android:layout_width="match_parent"
@@ -288,16 +291,15 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <!-- Base Document Icon -->
                         <ImageView
                             android:id="@+id/myImage"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
                             android:contentDescription="Document Icon"
+                            android:scaleType="fitCenter"
                             android:src="@drawable/folder_icon"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
-
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/plusIcon"
@@ -309,29 +311,27 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:shapeAppearanceOverlay="@style/CircleImage" />
 
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
                         android:id="@+id/overviewTitle3"
-                        android:layout_width="268dp"
+                        android:layout_width="0dp"
                         android:layout_height="28dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="4dp"
                         android:text="Create Requirement"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@id/textView8"
                         app:layout_constraintEnd_toStartOf="@id/arrowIcon"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@id/iconContainer"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_setVerticalChainStyle="packed" />
+                        app:layout_constraintVertical_chainStyle="packed" />
 
                     <TextView
                         android:id="@+id/textView8"
-                        android:layout_width="264dp"
+                        android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_marginTop="4dp"
                         android:text="Add and send requirements to your classes."
@@ -339,7 +339,6 @@
                         android:textSize="13sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@id/overviewTitle3"
-                        app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="@id/overviewTitle3"
                         app:layout_constraintTop_toBottomOf="@id/overviewTitle3" />
 
@@ -353,13 +352,13 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.518" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
+            <!-- Recent Sent Requirements -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -389,14 +388,13 @@
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.105" />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/recentViewAll"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="View All >"
+                            android:text="View All &gt;"
                             android:textColor="#21A876"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -418,7 +416,6 @@
                             android:src="@drawable/gen_sci"
                             app:shapeAppearanceOverlay="@style/CircleImage"
                             app:strokeColor="#3AAB83" />
-
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -456,7 +453,7 @@
                             android:layout_width="18dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text=">"
+                            android:text="&gt;"
                             android:textColor="#222222"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -511,7 +508,7 @@
                             android:layout_width="15dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text=">"
+                            android:text="&gt;"
                             android:textColor="#222222"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -566,7 +563,7 @@
                             android:layout_width="18dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text=">"
+                            android:text="&gt;"
                             android:textColor="#222222"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -574,8 +571,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Reminder -->
             <LinearLayout
-                android:layout_width="392dp"
+                android:layout_width="match_parent"
                 android:layout_height="94dp"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -586,10 +584,9 @@
                     android:layout_width="74dp"
                     android:layout_height="69dp">
 
-
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/reminderImage"
-                        android:layout_width="80dp"
+                        android:layout_width="68dp"
                         android:layout_height="68dp"
                         android:contentDescription="Backpack reminder"
                         android:scaleType="centerCrop"
@@ -609,18 +606,18 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:shapeAppearanceOverlay="@style/CircleImage" />
 
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout
-                    android:layout_width="232dp"
+                    android:layout_width="0dp"
                     android:layout_height="81dp"
                     android:layout_marginStart="8dp"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="232dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="REMINDER:"
                         android:textColor="#3AAB83"
@@ -628,7 +625,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="232dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Double check and make sure your students are ready!"
@@ -642,23 +639,21 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNavigation"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginTop="839dp"
         android:background="#4BD0D2"
         android:orientation="horizontal"
         android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImage">
-
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/homeButton"
-            android:layout_width="20dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
@@ -670,11 +665,11 @@
 
         <ImageButton
             android:id="@+id/plusButton"
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:contentDescription="Add requriments"
+            android:contentDescription="Add requirements"
             android:padding="1dp"
             android:scaleType="fitCenter"
             android:src="@drawable/icon_plus"
