@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_student_main_dashboard">
 
-    <!-- ==================== HEADER ==================== -->
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -17,9 +16,6 @@
         android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Welcome text -->
-
-        <!-- SmartPack logo -->
         <LinearLayout
             android:layout_width="126dp"
             android:layout_height="58dp"
@@ -59,7 +55,7 @@
 
         </LinearLayout>
 
-        <!-- Profile icon -->
+
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -71,7 +67,6 @@
 
     </LinearLayout>
 
-    <!-- ==================== TODAY'S REQUIREMENTS ==================== -->
     <LinearLayout
         android:id="@+id/requirements_header"
         android:layout_width="match_parent"
@@ -126,7 +121,6 @@
 
     </LinearLayout>
 
-    <!-- ==================== SUBJECT LIST ==================== -->
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
@@ -144,7 +138,6 @@
             android:paddingTop="4dp"
             android:paddingBottom="8dp">
 
-            <!-- 1. Gen Science -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -197,7 +190,6 @@
 
             </LinearLayout>
 
-            <!-- 2. Gen Math -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -249,7 +241,6 @@
 
             </LinearLayout>
 
-            <!-- 3. CLED -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -301,7 +292,6 @@
 
             </LinearLayout>
 
-            <!-- 4. Life and Career Skills -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -352,7 +342,6 @@
 
             </LinearLayout>
 
-            <!-- 5. Mabisang Komunikasyon -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -403,7 +392,7 @@
 
             </LinearLayout>
 
-            <!-- 6. Effective Communication -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -454,7 +443,7 @@
 
             </LinearLayout>
 
-            <!-- 7. Kasaysayan -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -505,7 +494,6 @@
 
             </LinearLayout>
 
-            <!-- 8. Computer Programming -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -559,7 +547,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- ==================== REMINDER ==================== -->
+
     <LinearLayout
         android:id="@+id/reminder"
         android:layout_width="0dp"
@@ -626,7 +614,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- ==================== BOTTOM NAV ==================== -->
     <LinearLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
