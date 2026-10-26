@@ -57,7 +57,6 @@
 
             </LinearLayout>
 
-            <!-- Today's Overview -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="74dp"
@@ -131,7 +130,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Class Overview -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="161dp"
@@ -267,7 +265,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Create Requirement -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/createRequirementCard"
                 android:layout_width="match_parent"
@@ -358,7 +355,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Recent Sent Requirements -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -571,7 +567,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Reminder -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="94dp"
@@ -639,7 +635,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNavigation"
         android:layout_width="415dp"
