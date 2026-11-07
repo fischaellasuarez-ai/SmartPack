@@ -14,16 +14,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class activity_all_requirements_teacher_main_dashboard
         extends AppCompatActivity {
 
     private LinearLayout requirementsContainer;
-
-    private ImageButton homeButton;
-    private ImageButton profileButton;
+    private TextView requirementsCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,35 +28,59 @@ public class activity_all_requirements_teacher_main_dashboard
         setContentView(R.layout.activity_all_requirments_teacher_main_dashboard);
 
         requirementsContainer = findViewById(R.id.requirementsContainer);
+        requirementsCount = findViewById(R.id.requirementsCount);
 
-        homeButton = findViewById(R.id.homeButton);
-        profileButton = findViewById(R.id.profileButton);
+        ImageButton homeButton = findViewById(R.id.homeButton);
+        ImageButton addClassesButton = findViewById(R.id.addClasses_Button);
+        ImageButton profileButton = findViewById(R.id.profileButton);
 
-        homeButton.setOnClickListener(v -> {
 
-            Intent intent = new Intent(
-                    activity_all_requirements_teacher_main_dashboard.this,
-                    activity_teacher_main_dashboard.class
-            );
+        if (homeButton != null) {
+            homeButton.setOnClickListener(v -> {
+                Intent intent = new Intent(
+                        this,
+                        activity_teacher_main_dashboard.class
+                );
 
-            intent.setFlags(
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                            Intent.FLAG_ACTIVITY_SINGLE_TOP
-            );
+                intent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                                Intent.FLAG_ACTIVITY_SINGLE_TOP
+                );
 
-            startActivity(intent);
-            finish();
-        });
+                startActivity(intent);
+                finish();
+            });
+        }
 
-        profileButton.setOnClickListener(v -> {
 
-            Intent intent = new Intent(
-                    activity_all_requirements_teacher_main_dashboard.this,
-                    activity_teacher_profile.class
-            );
+        if (addClassesButton != null) {
+            addClassesButton.setOnClickListener(v -> {
+                Intent intent = new Intent(
+                        this,
+                        activity_teacher_main_dashboard.class
+                );
 
-            startActivity(intent);
-        });
+                intent.putExtra("openCreateRequirement", true);
+
+                intent.addFlags(
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                                Intent.FLAG_ACTIVITY_SINGLE_TOP
+                );
+
+                startActivity(intent);
+                finish();
+            });
+        }
+
+
+        if (profileButton != null) {
+            profileButton.setOnClickListener(v -> {
+                startActivity(new Intent(
+                        this,
+                        activity_teacher_profile.class
+                ));
+            });
+        }
 
         displayAllRequirements();
     }
@@ -73,31 +94,45 @@ public class activity_all_requirements_teacher_main_dashboard
         }
     }
 
-    private JSONArray getSavedRequirements() {
 
+    private JSONArray getSavedRequirements() {
         return activity_requirement_storage.getRequirements(this);
     }
 
+
+    private void updateRequirementsCount() {
+
+        int totalRequirements =
+                activity_requirement_storage.getRequirementsCount(this);
+
+        if (requirementsCount != null) {
+            requirementsCount.setText(
+                    totalRequirements +
+                            (totalRequirements == 1
+                                    ? " Requirement Sent"
+                                    : " Requirements Sent")
+            );
+        }
+    }
+
+
     private void displayAllRequirements() {
+
+        if (requirementsContainer == null) {
+            return;
+        }
 
         requirementsContainer.removeAllViews();
 
         JSONArray requirements = getSavedRequirements();
 
+        updateRequirementsCount();
+
         if (requirements.length() == 0) {
-
-            TextView emptyMessage = new TextView(this);
-
-            emptyMessage.setText("No requirements sent yet.");
-            emptyMessage.setTextSize(16);
-            emptyMessage.setTextColor(Color.GRAY);
-            emptyMessage.setGravity(Gravity.CENTER);
-            emptyMessage.setPadding(16, 30, 16, 30);
-
-            requirementsContainer.addView(emptyMessage);
-
+            showEmptyMessage();
             return;
         }
+
 
         for (int i = requirements.length() - 1; i >= 0; i--) {
 
@@ -110,195 +145,229 @@ public class activity_all_requirements_teacher_main_dashboard
                         "Untitled Requirement"
                 );
 
-                String grade = requirement.optString("grade");
-                String section = requirement.optString("section");
-                String date = requirement.optString("date");
+                String grade = requirement.optString("grade", "");
+                String section = requirement.optString("section", "");
+                String date = requirement.optString("date", "");
 
                 JSONArray items = requirement.optJSONArray("items");
 
-                // REQUIREMENT BOX
-                LinearLayout requirementBox = new LinearLayout(this);
-
-                requirementBox.setOrientation(LinearLayout.VERTICAL);
-                requirementBox.setPadding(
-                        dp(12), dp(10), dp(12), dp(10)
+                addRequirementCard(
+                        title,
+                        grade,
+                        section,
+                        date,
+                        items
                 );
 
-                GradientDrawable boxBackground = new GradientDrawable();
-                boxBackground.setColor(Color.WHITE);
-                boxBackground.setCornerRadius(dp(13));
-                boxBackground.setStroke(
-                        dp(1),
-                        Color.rgb(220, 235, 240)
-                );
-
-                requirementBox.setBackground(boxBackground);
-
-                LinearLayout.LayoutParams boxParams =
-                        new LinearLayout.LayoutParams(
-                                LinearLayout.LayoutParams.MATCH_PARENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT
-                        );
-
-                boxParams.setMargins(
-                        dp(4), dp(5), dp(4), dp(9)
-                );
-
-                requirementBox.setLayoutParams(boxParams);
-
-
-                LinearLayout titleRow = new LinearLayout(this);
-
-                titleRow.setOrientation(LinearLayout.HORIZONTAL);
-                titleRow.setGravity(Gravity.CENTER_VERTICAL);
-
-                // REQUIREMENT TITLE
-                TextView titleText = new TextView(this);
-
-                titleText.setText(title);
-                titleText.setTextColor(Color.rgb(41, 41, 41));
-                titleText.setTextSize(18);
-                titleText.setTypeface(null, Typeface.BOLD);
-                titleText.setMaxLines(2);
-
-                LinearLayout.LayoutParams titleParams =
-                        new LinearLayout.LayoutParams(
-                                0,
-                                LinearLayout.LayoutParams.WRAP_CONTENT,
-                                1
-                        );
-
-                titleText.setLayoutParams(titleParams);
-
-                TextView arrow = new TextView(this);
-
-                arrow.setText(">");
-                arrow.setTextSize(20);
-                arrow.setTextColor(Color.rgb(34, 34, 34));
-                arrow.setGravity(Gravity.CENTER);
-                arrow.setClickable(true);
-                arrow.setFocusable(true);
-
-                arrow.setBackgroundResource(
-                        android.R.drawable.list_selector_background
-                );
-
-                LinearLayout.LayoutParams arrowParams =
-                        new LinearLayout.LayoutParams(
-                                dp(40),
-                                dp(40)
-                        );
-
-                arrow.setLayoutParams(arrowParams);
-
-                titleRow.addView(titleText);
-                titleRow.addView(arrow);
-
-                TextView dateText = new TextView(this);
-
-                dateText.setText("Due: " + date);
-                dateText.setTextColor(Color.GRAY);
-                dateText.setTextSize(11);
-
-                LinearLayout details = new LinearLayout(this);
-
-                details.setOrientation(LinearLayout.VERTICAL);
-                details.setPadding(
-                        dp(10), dp(10), dp(10), dp(10)
-                );
-
-                GradientDrawable detailsBackground =
-                        new GradientDrawable();
-
-                detailsBackground.setColor(
-                        Color.rgb(234, 247, 252)
-                );
-
-                detailsBackground.setCornerRadius(dp(10));
-                details.setBackground(detailsBackground);
-
-                LinearLayout.LayoutParams detailsParams =
-                        new LinearLayout.LayoutParams(
-                                LinearLayout.LayoutParams.MATCH_PARENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT
-                        );
-
-                detailsParams.setMargins(0, dp(10), 0, 0);
-                details.setLayoutParams(detailsParams);
-
-
-                TextView detailsHeading = new TextView(this);
-
-                detailsHeading.setText("Requirement Details");
-                detailsHeading.setTextColor(Color.rgb(34, 34, 34));
-                detailsHeading.setTextSize(16);
-                detailsHeading.setTypeface(null, Typeface.BOLD);
-
-
-                TextView detailsInfo = new TextView(this);
-
-                StringBuilder message = new StringBuilder();
-
-                message.append("Grade: ").append(grade);
-                message.append("\nSection: ").append(section);
-                message.append("\nDue Date: ").append(date);
-                message.append("\n\nItems to bring:");
-
-                if (items == null || items.length() == 0) {
-
-                    message.append("\nNo items added.");
-
-                } else {
-
-                    for (int j = 0; j < items.length(); j++) {
-
-                        message.append("\n• ")
-                                .append(items.optString(j));
-                    }
-                }
-
-                detailsInfo.setText(message.toString());
-                detailsInfo.setTextColor(Color.rgb(68, 68, 68));
-                detailsInfo.setTextSize(14);
-                detailsInfo.setPadding(0, dp(6), 0, 0);
-
-                details.addView(detailsHeading);
-                details.addView(detailsInfo);
-
-                details.setVisibility(View.GONE);
-
-                arrow.setOnClickListener(v -> {
-
-                    if (details.getVisibility() == View.GONE) {
-
-                        details.setVisibility(View.VISIBLE);
-                        arrow.setText("⌄");
-
-                    } else {
-
-                        details.setVisibility(View.GONE);
-                        arrow.setText(">");
-                    }
-                });
-
-
-                requirementBox.addView(titleRow);
-                requirementBox.addView(dateText);
-                requirementBox.addView(details);
-
-
-                requirementsContainer.addView(requirementBox);
-
-            } catch (JSONException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    private int dp(int value) {
 
-        return (int) (
-                value * getResources().getDisplayMetrics().density
+    private void showEmptyMessage() {
+
+        TextView emptyMessage = new TextView(this);
+
+        emptyMessage.setText(
+                "No requirements sent yet.\n\n" +
+                        "Your saved requirements will appear here."
         );
+
+        emptyMessage.setTextColor(Color.GRAY);
+        emptyMessage.setTextSize(15);
+        emptyMessage.setGravity(Gravity.CENTER);
+        emptyMessage.setPadding(20, 50, 20, 50);
+
+        requirementsContainer.addView(emptyMessage);
+    }
+
+
+    private void addRequirementCard(
+            String title,
+            String grade,
+            String section,
+            String date,
+            JSONArray items) {
+
+        LinearLayout card = new LinearLayout(this);
+
+        card.setOrientation(LinearLayout.VERTICAL);
+        card.setPadding(18, 16, 18, 16);
+
+        GradientDrawable cardBackground = new GradientDrawable();
+        cardBackground.setColor(Color.WHITE);
+        cardBackground.setCornerRadius(18);
+
+        card.setBackground(cardBackground);
+        card.setElevation(4);
+
+        LinearLayout.LayoutParams cardParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        cardParams.setMargins(0, 0, 0, 14);
+        card.setLayoutParams(cardParams);
+
+        // HEADER
+        LinearLayout header = new LinearLayout(this);
+
+        header.setOrientation(LinearLayout.HORIZONTAL);
+        header.setGravity(Gravity.CENTER_VERTICAL);
+
+        LinearLayout titleContainer = new LinearLayout(this);
+
+        titleContainer.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout.LayoutParams titleParams =
+                new LinearLayout.LayoutParams(
+                        0,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        1
+                );
+
+        header.addView(titleContainer, titleParams);
+
+
+        TextView titleText = new TextView(this);
+
+        titleText.setText(title);
+        titleText.setTextColor(Color.rgb(0, 73, 172));
+        titleText.setTextSize(17);
+        titleText.setTypeface(null, Typeface.BOLD);
+
+        titleContainer.addView(titleText);
+
+
+        TextView dateText = new TextView(this);
+
+        dateText.setText("Due Date: " + date);
+        dateText.setTextColor(Color.DKGRAY);
+        dateText.setTextSize(13);
+
+        LinearLayout.LayoutParams dateParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        dateParams.topMargin = 5;
+        titleContainer.addView(dateText, dateParams);
+
+
+        TextView arrow = new TextView(this);
+
+        arrow.setText(">");
+        arrow.setTextColor(Color.rgb(0, 73, 172));
+        arrow.setTextSize(18);
+        arrow.setPadding(12, 8, 4, 8);
+
+        header.addView(arrow);
+        card.addView(header);
+
+
+        LinearLayout details = new LinearLayout(this);
+
+        details.setOrientation(LinearLayout.VERTICAL);
+        details.setVisibility(View.GONE);
+
+        LinearLayout.LayoutParams detailsParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        detailsParams.topMargin = 16;
+        card.addView(details, detailsParams);
+
+
+        View divider = new View(this);
+
+        divider.setBackgroundColor(Color.LTGRAY);
+
+        LinearLayout.LayoutParams dividerParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        1
+                );
+
+        dividerParams.bottomMargin = 12;
+        details.addView(divider, dividerParams);
+
+
+        addDetailText(details, "Grade: " + grade);
+        addDetailText(details, "Section: " + section);
+        addDetailText(details, "Due Date: " + date);
+
+
+        TextView itemsTitle = new TextView(this);
+
+        itemsTitle.setText("Items to Bring:");
+        itemsTitle.setTextColor(Color.rgb(0, 73, 172));
+        itemsTitle.setTextSize(15);
+        itemsTitle.setTypeface(null, Typeface.BOLD);
+
+        LinearLayout.LayoutParams itemsTitleParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        itemsTitleParams.topMargin = 10;
+        details.addView(itemsTitle, itemsTitleParams);
+
+
+        if (items != null && items.length() > 0) {
+
+            for (int i = 0; i < items.length(); i++) {
+
+                addDetailText(
+                        details,
+                        "• " + items.optString(i)
+                );
+            }
+
+        } else {
+            addDetailText(details, "No items listed.");
+        }
+
+
+        header.setOnClickListener(v -> {
+
+            if (details.getVisibility() == View.GONE) {
+
+                details.setVisibility(View.VISIBLE);
+
+
+                arrow.setText("⮟");
+
+            } else {
+
+                details.setVisibility(View.GONE);
+
+
+                arrow.setText(">");
+            }
+        });
+
+        requirementsContainer.addView(card);
+    }
+
+
+    private void addDetailText(
+            LinearLayout container,
+            String text) {
+
+        TextView detail = new TextView(this);
+
+        detail.setText(text);
+        detail.setTextColor(Color.DKGRAY);
+        detail.setTextSize(14);
+        detail.setPadding(0, 5, 0, 5);
+
+        container.addView(detail);
     }
 }

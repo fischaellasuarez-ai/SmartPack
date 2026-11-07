@@ -1,4 +1,4 @@
-qzxml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,10 +6,7 @@ qzxml version="1.0" encoding="utf-8"?>
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login">
-//
-    <!-- SmartPack Logo -->
 
-    <!-- SmartPack Title -->
 
     <ImageView
         android:id="@+id/ivLogo"
@@ -50,7 +47,7 @@ qzxml version="1.0" encoding="utf-8"?>
 
     </LinearLayout>
 
-    <!-- Status Selection Card -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/statusCard"
         android:layout_width="0dp"
@@ -74,9 +71,8 @@ qzxml version="1.0" encoding="utf-8"?>
             android:orientation="vertical"
             android:padding="30dp">
 
-            <!-- Choose Your Status -->
 
-            <!-- Student and Teacher Cards -->
+
             <TextView
                 android:id="@+id/tvChooseStatus"
                 android:layout_width="wrap_content"
@@ -94,7 +90,7 @@ qzxml version="1.0" encoding="utf-8"?>
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <!-- Student Card -->
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardStudent"
                     android:layout_width="0dp"
@@ -120,8 +116,7 @@ qzxml version="1.0" encoding="utf-8"?>
                             android:layout_height="80dp"
                             android:contentDescription="Student icon"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/student_icon"
-                            app:tint="#FFFFFF" />
+                            android:src="@drawable/student_icon"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -136,7 +131,7 @@ qzxml version="1.0" encoding="utf-8"?>
 
                 </androidx.cardview.widget.CardView>
 
-                <!-- Teacher Card -->
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardTeacher"
                     android:layout_width="0dp"
@@ -148,8 +143,7 @@ qzxml version="1.0" encoding="utf-8"?>
                     android:foreground="?attr/selectableItemBackground"
                     app:cardBackgroundColor="#33B9CB"
                     app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    app:strokerColor=>
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -163,8 +157,7 @@ qzxml version="1.0" encoding="utf-8"?>
                             android:layout_height="80dp"
                             android:contentDescription="Teacher icon"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/teacher_icon"
-                            app:tint="#FFFFFF" />
+                            android:src="@drawable/teacher_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"

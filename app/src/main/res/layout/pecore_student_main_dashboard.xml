@@ -43,8 +43,7 @@
             android:layout_width="180dp"
             android:layout_height="138dp"
             android:contentDescription="SmartPack"
-            android:src="@drawable/smartpack_logo2"
-            app:tint="#1565C0" />
+            android:src="@drawable/smartpack_logo2" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -82,8 +81,7 @@
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:src="@drawable/pic7"
-            android:contentDescription="Requirements"
-            app:tint="#E1DCC4" />
+            android:contentDescription="Requirements" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -306,8 +304,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/lacs_icon"
-                    android:contentDescription="Life and Career Skills"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Life and Career Skills"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -337,8 +334,7 @@
                     android:layout_height="24dp"
                     android:rotation="-90"
                     android:src="@drawable/m3_split_button_chevron_avd"
-                    android:contentDescription="Open Life and Career Skills"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Open Life and Career Skills" />
 
             </LinearLayout>
 
@@ -356,8 +352,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/mabisang_komunikasyon"
-                    android:contentDescription="Mabisang Komunikasyon"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Mabisang Komunikasyon" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -387,8 +382,7 @@
                     android:layout_height="24dp"
                     android:rotation="-90"
                     android:src="@drawable/m3_split_button_chevron_avd"
-                    android:contentDescription="Open Mabisang Komunikasyon"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Open Mabisang Komunikasyon" />
 
             </LinearLayout>
 
@@ -407,8 +401,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/effective_communication"
-                    android:contentDescription="Effective Communication"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Effective Communication" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -438,8 +431,7 @@
                     android:layout_height="24dp"
                     android:rotation="-90"
                     android:src="@drawable/m3_split_button_chevron_avd"
-                    android:contentDescription="Open Effective Communication"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Open Effective Communication" />
 
             </LinearLayout>
 
@@ -458,8 +450,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/kasaysayan"
-                    android:contentDescription="Kasaysayan"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Kasaysayan" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -489,8 +480,7 @@
                     android:layout_height="24dp"
                     android:rotation="-90"
                     android:src="@drawable/m3_split_button_chevron_avd"
-                    android:contentDescription="Open Kasaysayan"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Open Kasaysayan" />
 
             </LinearLayout>
 
@@ -508,8 +498,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/computer_programming"
-                    android:contentDescription="Computer Programming"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Computer Programming" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -539,8 +528,7 @@
                     android:layout_height="24dp"
                     android:rotation="-90"
                     android:src="@drawable/m3_split_button_chevron_avd"
-                    android:contentDescription="Open Computer Programming"
-                    app:tint="#FFFFFF" />
+                    android:contentDescription="Open Computer Programming"/>
 
             </LinearLayout>
 
@@ -630,24 +618,21 @@
             android:layout_height="36dp"
             android:layout_weight="1"
             android:contentDescription="Home"
-            android:src="@drawable/home2_icon"
-            app:tint="#2E7D32" />
+            android:src="@drawable/home2_icon" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:contentDescription="Add"
-            android:src="@drawable/add_icon"
-            app:tint="#81C784" />
+            android:src="@drawable/add_icon" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="36dp"
             android:layout_weight="1"
             android:contentDescription="Profile"
-            android:src="@drawable/person_icon"
-            app:tint="#757575" />
+            android:src="@drawable/person_icon" />
 
     </LinearLayout>
 
