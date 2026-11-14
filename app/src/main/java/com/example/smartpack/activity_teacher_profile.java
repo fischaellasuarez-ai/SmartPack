@@ -244,6 +244,7 @@ public class activity_teacher_profile extends AppCompatActivity {
                             Intent.FLAG_ACTIVITY_SINGLE_TOP
             );
 
+
             startActivity(intent);
             finish();
 

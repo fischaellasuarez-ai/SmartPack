@@ -234,8 +234,6 @@ public class activity_uploading_section extends AppCompatActivity {
     }
 
 
-
-
     private void clearSectionForm() {
 
         gradeLevelDropdown.setText("", false);

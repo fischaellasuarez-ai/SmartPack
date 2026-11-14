@@ -9,6 +9,7 @@
     tools:context=".activity_teacher_profile">
 
 
+
     <ScrollView
         android:id="@+id/profileScroll"
         android:layout_width="0dp"

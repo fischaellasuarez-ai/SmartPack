@@ -22,6 +22,7 @@ public class activity_all_requirements_teacher_main_dashboard
     private LinearLayout requirementsContainer;
     private TextView requirementsCount;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

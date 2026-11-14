@@ -25,6 +25,7 @@ public class activity_requirement_storage {
         SharedPreferences preferences = context.getSharedPreferences(
                 PREF_NAME,
                 Context.MODE_PRIVATE
+
         );
 
         try {

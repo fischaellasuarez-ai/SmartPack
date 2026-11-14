@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPack">
 
+
         <activity
             android:name=".activity_teacher_main_dashboard"
             android:exported="true"
